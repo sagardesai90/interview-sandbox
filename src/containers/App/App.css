@@ -1,3 +1,9 @@
+.App {
+  font-family: "Nunito", sans-serif;
+  background-color: rgb(0, 0, 0);
+  color: #fff;
+}
+
 .App-header {
   background-color: rgb(0, 0, 0);
   height: 80px;
@@ -28,6 +34,24 @@
   flex-direction: column;
   height: calc(100vh - 80px);
 }
+
+.codingpage {
+  height: calc(100vh - 80px);
+}
+
+.CodeMirror-scroll {
+  padding: 16px 32px;
+}
+
+.cm-s-dracula.CodeMirror {
+  padding: 0px;
+  height: calc(100vh - 80px);
+}
+
+p {
+  margin: 0;
+}
+
 .title {
   font-size: 36px;
   font-weight: 100;
