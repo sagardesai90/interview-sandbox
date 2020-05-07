@@ -1,0 +1,45 @@
+.App-header {
+  background-color: rgb(0, 0, 0);
+  height: 80px;
+  display: flex;
+  align-items: center;
+  color: white;
+  padding: 0px 64px;
+}
+.App-header .extras {
+  margin-left: auto;
+}
+.App-title {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 36px;
+  text-decoration: none;
+}
+.App-title:active,
+.App-title:hover {
+  color: #fff;
+}
+
+.homepage {
+  display: flex;
+  padding: 0px 64px;
+  justify-content: center;
+  flex-direction: column;
+  height: calc(100vh - 80px);
+}
+.title {
+  font-size: 36px;
+  font-weight: 100;
+  margin-bottom: 12px;
+}
+.sub-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: rgb(124, 124, 124);
+  margin-bottom: 36px;
+  max-width: 500px;
+}
+.highlight {
+  color: #5ce198;
+}
