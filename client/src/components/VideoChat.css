@@ -1,0 +1,11 @@
+.videoContainer {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+}
+
+.callButton {
+  background-color: #f1a585;
+  padding: 0.5rem;
+  border-radius: 10px;
+  margin: 0.1rem;
+}

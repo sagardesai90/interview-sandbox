@@ -71,7 +71,7 @@ export default class HomePage extends React.Component {
             <button
               className="btn pulse-button"
               onClick={this.onNewGround}
-              style={{ backgroundColor: "#f1a585" }}
+              style={{ backgroundColor: "#f1a585", borderRadius: "4px" }}
             >
               Let's go
             </button>

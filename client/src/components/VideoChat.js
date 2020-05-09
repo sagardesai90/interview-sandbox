@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import io from "socket.io-client";
 import Peer from "simple-peer";
 import styled from "styled-components";
+import "./VideoChat.css";
 
 const Container = styled.div`
   display: flex;
@@ -116,26 +117,40 @@ function VideoChat() {
   if (receivingCall) {
     incomingCall = (
       <div>
-        <h1>{caller} is calling you</h1>
-        <button onClick={acceptCall}>Accept</button>
+        {/* <p>{caller} is calling you</p> */}
+        <button
+          style={{ backgroundColor: "#f1a585" }}
+          onClick={acceptCall}
+          className="callButton"
+        >
+          Accept Call
+        </button>
       </div>
     );
   }
   return (
-    <Container>
-      <Row>
-        {UserVideo}
-        {PartnerVideo}
-      </Row>
-      <Row>
-        {Object.keys(users).map((key) => {
-          if (key === yourID) {
-            return null;
-          }
-          return <button onClick={() => callPeer(key)}>Call {key}</button>;
-        })}
-      </Row>
-      <Row>{incomingCall}</Row>
+    <Container className="videoContainer">
+      <div>
+        <Row>
+          {Object.keys(users).map((key) => {
+            if (key === yourID) {
+              return null;
+            }
+            return (
+              <button className="callButton" onClick={() => callPeer(key)}>
+                Call
+              </button>
+            );
+          })}
+          <div>{incomingCall}</div>
+        </Row>
+      </div>
+      <div>
+        <Row>
+          {UserVideo}
+          {PartnerVideo}
+        </Row>
+      </div>
     </Container>
   );
 }
