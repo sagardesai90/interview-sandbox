@@ -15,8 +15,8 @@ const Row = styled.div`
 
 const Video = styled.video`
   border: 1px solid blue;
-  width: 50%;
-  height: 50%;
+  // width: 50%;
+  height: calc(15vh);
 `;
 
 function VideoChat() {

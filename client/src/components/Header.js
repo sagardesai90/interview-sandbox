@@ -10,7 +10,7 @@ const Header = (props: Props) => {
   return (
     <header style={props.style} className="App-header">
       <Link className="App-title" to="/">
-        Realtime Code Share
+        Interview Sandbox
       </Link>
       <div className="extras">{props.extras}</div>
     </header>

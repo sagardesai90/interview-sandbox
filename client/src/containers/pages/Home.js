@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Header from "../../components/Header";
 import rand from "random-key";
 import { database } from "firebase";
+import Typewriter from "typewriter-effect";
 
 export default class HomePage extends React.Component {
   state = {
@@ -34,20 +35,45 @@ export default class HomePage extends React.Component {
         />
         <div className="homepage">
           <p className="title">
-            <br />
-            Share Code with in <span className="highlight">Realtime</span>.
+            {/* <br /> */}
+            Share Code with
+            <Typewriter
+              className="homepage"
+              options={{
+                strings: [
+                  "interviewers",
+                  "interviewees",
+                  "coworkers",
+                  "classmates",
+                  "friends",
+                  "hackers",
+                ],
+                autoStart: true,
+                loop: true,
+              }}
+              onInit={(typewriter) => {}}
+            />
+            in <span className="highlight">Realtime</span>.
             <br />
             Anywhere, Anytime and with <span className="highlight">Anyone</span>
             .
+            <p>
+              Oh, and you can also <span className="highlight">video chat</span>{" "}
+              and <span className="highlight">draw</span>.
+            </p>
           </p>
 
           <p className="sub-title">
-            Simple Realtime Code Sharing Editor App. Using Firebase Realtime
-            Database and Code Mirror as Editor.
+            A simple real time code sharing app built with Firebase Realtime
+            Database, Code Mirror as Editor, WebRTC video chat, and Witeboard.
           </p>
           <div>
-            <button className="btn" onClick={this.onNewGround}>
-              Share Code
+            <button
+              className="btn pulse-button"
+              onClick={this.onNewGround}
+              style={{ backgroundColor: "#f1a585" }}
+            >
+              Let's go
             </button>
           </div>
         </div>

@@ -106,11 +106,9 @@ export default class CodingPage extends React.Component {
           </div>
           <div className="lowerMenu">
             <Eval code={this.state.code} />
-            <p>terminal output here</p>
           </div>
           <div className="lowerMenu">
             <VideoChat />
-            {/* <p>chat app </p> */}
           </div>
         </div>
       </React.Fragment>

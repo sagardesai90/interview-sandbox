@@ -9,7 +9,7 @@ class Eval extends React.Component {
   }
 
   render() {
-    return <p>hello </p>;
+    return <p>terminal output here</p>;
   }
 }
 
