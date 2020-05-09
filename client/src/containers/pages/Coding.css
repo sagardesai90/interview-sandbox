@@ -1,0 +1,14 @@
+.coding {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+}
+
+.lowerMenu {
+  padding: 0px;
+  height: calc(20vh);
+}
+
+.witeboard {
+  height: 100%;
+  width: 100%;
+}

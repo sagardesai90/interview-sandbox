@@ -45,7 +45,7 @@
 
 .cm-s-dracula.CodeMirror {
   padding: 0px;
-  height: calc(100vh - 80px);
+  height: calc(80vh - 80px);
 }
 
 p {

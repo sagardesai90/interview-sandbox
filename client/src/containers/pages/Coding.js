@@ -2,6 +2,9 @@ import React from "react";
 import Header from "../../components/Header";
 import { database } from "firebase";
 import CodeMirror from "react-codemirror";
+import "./Coding.css";
+import VideoChat from "../../components/VideoChat";
+import Eval from "../../components/Eval";
 
 require("codemirror/lib/codemirror.css");
 require("codemirror/mode/javascript/javascript");
@@ -15,6 +18,7 @@ export default class CodingPage extends React.Component {
       line: 0,
       ch: 0,
     },
+    witeboard: null,
   };
   componentDidMount = () => {
     const { params } = this.props.match;
@@ -28,6 +32,7 @@ export default class CodingPage extends React.Component {
           {
             code: snapshot.val().content + "",
             createdon: snapshot.val().createdon,
+            witeboard: "http://witeboard.com/" + params.sessionid,
           },
           () => {
             let content = snapshot.val().content;
@@ -81,19 +86,32 @@ export default class CodingPage extends React.Component {
             </div>
           }
         />
-        <div className="coding-page">
-          <CodeMirror
-            ref={(r) => (this.codemirror = r)}
-            className="code-mirror-container"
-            value={this.state.code}
-            onChange={this.onChange}
-            options={{
-              theme: "dracula",
-              lineNumbers: true,
-              readOnly: false,
-              mode: "javascript",
-            }}
-          />
+        <div className="coding">
+          <div className="coding-page">
+            <CodeMirror
+              ref={(r) => (this.codemirror = r)}
+              className="code-mirror-container"
+              value={this.state.code}
+              onChange={this.onChange}
+              options={{
+                theme: "dracula",
+                lineNumbers: true,
+                readOnly: false,
+                mode: "javascript",
+              }}
+            />
+          </div>
+          <div>
+            <iframe className="witeboard" src={this.state.witeboard}></iframe>
+          </div>
+          <div className="lowerMenu">
+            <Eval code={this.state.code} />
+            <p>terminal output here</p>
+          </div>
+          <div className="lowerMenu">
+            <VideoChat />
+            {/* <p>chat app </p> */}
+          </div>
         </div>
       </React.Fragment>
     );
