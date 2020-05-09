@@ -32,7 +32,7 @@ export default class CodingPage extends React.Component {
           {
             code: snapshot.val().content + "",
             createdon: snapshot.val().createdon,
-            witeboard: "http://witeboard.com/" + params.sessionid,
+            witeboard: "https://witeboard.com/" + params.sessionid,
           },
           () => {
             let content = snapshot.val().content;
