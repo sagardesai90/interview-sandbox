@@ -121,11 +121,11 @@ function VideoChat() {
       <div>
         {/* <p>{caller} is calling you</p> */}
         <button
-          style={{ backgroundColor: "#000", color: "#fff" }}
+          style={{ backgroundColor: "#000", color: "#000" }}
           onClick={acceptCall}
-          className="callButton"
+          className="btn callButton"
         >
-          Accept Call
+          <span className="btn__content">Accept Call</span>
         </button>
       </div>
     );
@@ -139,8 +139,8 @@ function VideoChat() {
               return null;
             }
             return (
-              <button className="callButton" onClick={() => callPeer(key)}>
-                Call
+              <button className="btn callButton" onClick={() => callPeer(key)}>
+                <span className="btn__content">Call</span>
               </button>
             );
           })}
