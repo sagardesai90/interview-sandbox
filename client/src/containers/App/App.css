@@ -2,8 +2,6 @@
   font-family: "Nunito", sans-serif;
   background-color: rgb(0, 0, 0);
   color: #fff;
-  overflow: hidden;
-  -webkit-overflow-scrolling: touch;
 }
 
 .App-header {

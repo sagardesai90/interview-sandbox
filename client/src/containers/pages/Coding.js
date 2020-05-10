@@ -5,6 +5,11 @@ import CodeMirror from "react-codemirror";
 import "./Coding.css";
 import VideoChat from "../../components/VideoChat";
 import Eval from "../../components/Eval";
+import {
+  disableBodyScroll,
+  enableBodyScroll,
+  clearAllBodyScrollLocks,
+} from "body-scroll-lock";
 
 require("codemirror/lib/codemirror.css");
 require("codemirror/mode/javascript/javascript");
@@ -20,6 +25,7 @@ export default class CodingPage extends React.Component {
     },
     witeboard: null,
   };
+  targetElement = null;
   componentDidMount = () => {
     const { params } = this.props.match;
     console.log(params);
@@ -55,7 +61,17 @@ export default class CodingPage extends React.Component {
       .catch((e) => {
         self.codemirror.getCodeMirror().setValue("No Sessions Found!");
       });
+    this.targetElement = document.querySelector("#targetElementId");
   };
+
+  showTargetElement = () => {
+    // ... some logic to show target element
+
+    // 3. Disable body scroll
+    disableBodyScroll(this.targetElement);
+    console.log(this.targetElement, "targetElement");
+  };
+
   changeCursorPos = () => {
     const { line, ch } = this.state.cursorPosition;
     this.codemirror.getCodeMirror().doc.setCursor(line, ch);
@@ -86,7 +102,7 @@ export default class CodingPage extends React.Component {
             </div>
           }
         />
-        <div className="coding">
+        <div className="coding" id="mainElement">
           <div className="coding-page">
             <CodeMirror
               ref={(r) => (this.codemirror = r)}
