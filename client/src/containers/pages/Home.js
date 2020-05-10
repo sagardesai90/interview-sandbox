@@ -53,13 +53,13 @@ export default class HomePage extends React.Component {
               }}
               onInit={(typewriter) => {}}
             />
-            in <span className="highlight">Realtime</span>.
+            in <span className="highlight ">Realtime</span>.
             <br />
             Anywhere, Anytime and with <span className="highlight">Anyone</span>
             .
             <p>
               Oh, and you can also <span className="highlight">video chat</span>{" "}
-              and <span className="highlight">draw</span>.
+              and <span className="highlight cursive neon">draw</span>.
             </p>
           </p>
 

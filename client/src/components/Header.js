@@ -12,7 +12,7 @@ const Header = (props: Props) => {
       <Link className="App-title" to="/">
         Interview Sandbox
       </Link>
-      <div className="extras">{props.extras}</div>
+      <div className="extras ">{props.extras}</div>
     </header>
   );
 };
