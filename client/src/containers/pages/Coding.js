@@ -61,7 +61,7 @@ export default class CodingPage extends React.Component {
       .catch((e) => {
         self.codemirror.getCodeMirror().setValue("No Sessions Found!");
       });
-    this.targetElement = document.querySelector("#targetElementId");
+    this.targetElement = document.querySelector("#mainElement");
   };
 
   showTargetElement = () => {
