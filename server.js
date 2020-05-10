@@ -25,13 +25,15 @@ io.on("connection", (socket) => {
       signal: data.signalData,
       from: data.from,
     });
+    console.log("User call initiated.");
   });
 
   socket.on("acceptCall", (data) => {
     io.to(data.to).emit("callAccepted", data.signal);
+    console.log("User call accepted.");
   });
 });
 
 server.listen(PORT || 8000, () =>
-  console.log("server is running on port 8000")
+  console.log(`server is running on port ${PORT}`)
 );
