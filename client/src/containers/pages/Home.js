@@ -4,6 +4,7 @@ import Header from "../../components/Header";
 import rand from "random-key";
 import { database } from "firebase";
 import Typewriter from "typewriter-effect";
+import "./Home.css";
 
 export default class HomePage extends React.Component {
   state = {
@@ -67,12 +68,8 @@ export default class HomePage extends React.Component {
             A simple real time code sharing app built with Firebase Realtime
             Database, Code Mirror as Editor, WebRTC video chat, and Witeboard.
           </p>
-          <div>
-            <button
-              className="btn pulse-button"
-              onClick={this.onNewGround}
-              style={{ backgroundColor: "#f1a585", borderRadius: "4px" }}
-            >
+          <div className="buttonDiv">
+            <button className="btn letsGo" onClick={this.onNewGround}>
               Let's go
             </button>
           </div>

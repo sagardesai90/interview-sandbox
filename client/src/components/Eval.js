@@ -9,7 +9,9 @@ class Eval extends React.Component {
   }
 
   render() {
-    return <p>terminal output here</p>;
+    return (
+      <p style={{ padding: "1rem" }}>Terminal output here (coming soon).</p>
+    );
   }
 }
 

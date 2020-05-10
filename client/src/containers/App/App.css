@@ -74,15 +74,6 @@ p {
     0 0 80px #f1a585, 0 0 90px #f1a585, 0 0 100px #f1a585, 0 0 120px #f1a585;
 }
 
-.pulse-button {
-  box-shadow: 0 0 0 0 rgba(white, 0.3);
-  -webkit-animation: pulse 1.5s infinite;
-}
-
-.pulse-button:hover {
-  -webkit-animation: none;
-}
-
 .cursive {
   font-family: "Vibur", cursive;
 }
