@@ -5,11 +5,7 @@ import CodeMirror from "react-codemirror";
 import "./Coding.css";
 import VideoChat from "../../components/VideoChat";
 import Eval from "../../components/Eval";
-import {
-  disableBodyScroll,
-  enableBodyScroll,
-  clearAllBodyScrollLocks,
-} from "body-scroll-lock";
+import { RemoveScroll } from "react-remove-scroll";
 
 require("codemirror/lib/codemirror.css");
 require("codemirror/mode/javascript/javascript");
@@ -25,7 +21,6 @@ export default class CodingPage extends React.Component {
     },
     witeboard: null,
   };
-  targetElement = null;
   componentDidMount = () => {
     const { params } = this.props.match;
     console.log(params);
@@ -61,17 +56,7 @@ export default class CodingPage extends React.Component {
       .catch((e) => {
         self.codemirror.getCodeMirror().setValue("No Sessions Found!");
       });
-    this.targetElement = document.querySelector("#mainElement");
   };
-
-  showTargetElement = () => {
-    // ... some logic to show target element
-
-    // 3. Disable body scroll
-    disableBodyScroll(this.targetElement);
-    console.log(this.targetElement, "targetElement");
-  };
-
   changeCursorPos = () => {
     const { line, ch } = this.state.cursorPosition;
     this.codemirror.getCodeMirror().doc.setCursor(line, ch);
@@ -91,43 +76,45 @@ export default class CodingPage extends React.Component {
   };
   render() {
     return (
-      <React.Fragment>
-        <Header
-          style={{ background: "#1d1f27" }}
-          extras={
-            <div>
-              {this.state.createdon
-                ? `Created On: ${this.state.createdon}`
-                : ""}
+      <RemoveScroll>
+        <React.Fragment>
+          <Header
+            style={{ background: "#1d1f27" }}
+            extras={
+              <div>
+                {this.state.createdon
+                  ? `Created On: ${this.state.createdon}`
+                  : ""}
+              </div>
+            }
+          />
+          <div className="coding">
+            <div className="coding-page">
+              <CodeMirror
+                ref={(r) => (this.codemirror = r)}
+                className="code-mirror-container"
+                value={this.state.code}
+                onChange={this.onChange}
+                options={{
+                  theme: "dracula",
+                  lineNumbers: true,
+                  readOnly: false,
+                  mode: "javascript",
+                }}
+              />
             </div>
-          }
-        />
-        <div className="coding" id="mainElement">
-          <div className="coding-page">
-            <CodeMirror
-              ref={(r) => (this.codemirror = r)}
-              className="code-mirror-container"
-              value={this.state.code}
-              onChange={this.onChange}
-              options={{
-                theme: "dracula",
-                lineNumbers: true,
-                readOnly: false,
-                mode: "javascript",
-              }}
-            />
+            <div>
+              <iframe className="witeboard" src={this.state.witeboard}></iframe>
+            </div>
+            <div className="lowerMenu">
+              <Eval code={this.state.code} />
+            </div>
+            <div className="lowerMenu">
+              <VideoChat />
+            </div>
           </div>
-          <div>
-            <iframe className="witeboard" src={this.state.witeboard}></iframe>
-          </div>
-          <div className="lowerMenu">
-            <Eval code={this.state.code} />
-          </div>
-          <div className="lowerMenu">
-            <VideoChat />
-          </div>
-        </div>
-      </React.Fragment>
+        </React.Fragment>
+      </RemoveScroll>
     );
   }
 }
