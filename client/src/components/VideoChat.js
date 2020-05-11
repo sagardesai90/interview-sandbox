@@ -16,7 +16,7 @@ const Row = styled.div`
 
 const Video = styled.video`
   border: 1px solid blue;
-  // width: 50%;
+  width: 50%;
   height: calc(15vh);
 `;
 
@@ -132,21 +132,19 @@ function VideoChat() {
   }
   return (
     <Container className="videoContainer">
-      <div>
-        <Row>
-          {Object.keys(users).map((key) => {
-            if (key === yourID) {
-              return null;
-            }
-            return (
-              <button className="btn callButton" onClick={() => callPeer(key)}>
-                <span className="btn__content">Call</span>
-              </button>
-            );
-          })}
-          <div>{incomingCall}</div>
-        </Row>
-      </div>
+      <Row>
+        {Object.keys(users).map((key) => {
+          if (key === yourID) {
+            return null;
+          }
+          return (
+            <button className="btn callButton" onClick={() => callPeer(key)}>
+              <span className="btn__content">Call</span>
+            </button>
+          );
+        })}
+        <div>{incomingCall}</div>
+      </Row>
       <div>
         <Row>
           {UserVideo}

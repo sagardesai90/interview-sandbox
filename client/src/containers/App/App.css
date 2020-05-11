@@ -7,7 +7,7 @@
 
 .App-header {
   background-color: rgb(0, 0, 0);
-  height: 80px;
+  height: 50px;
   display: flex;
   align-items: center;
   color: white;
@@ -33,11 +33,11 @@
   padding: 0px 64px;
   justify-content: center;
   flex-direction: column;
-  height: calc(100vh - 80px);
+  height: calc(100vh - 50px);
 }
 
 .codingpage {
-  height: calc(100vh - 80px);
+  height: calc(100vh - 50px);
 }
 
 .CodeMirror-scroll {
@@ -46,7 +46,7 @@
 
 .cm-s-dracula.CodeMirror {
   padding: 0px;
-  height: calc(80vh - 80px);
+  height: calc(80vh - 50px);
 }
 
 p {
