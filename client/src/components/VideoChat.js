@@ -121,7 +121,7 @@ function VideoChat() {
       <div>
         {/* <p>{caller} is calling you</p> */}
         <button
-          style={{ backgroundColor: "#000", color: "#000" }}
+          style={{ backgroundColor: "#fcee09", color: "#000" }}
           onClick={acceptCall}
           className="btn callButton"
         >

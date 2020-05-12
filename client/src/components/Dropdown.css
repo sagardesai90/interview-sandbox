@@ -22,10 +22,12 @@ ul {
 }
 
 li:hover {
-  background-color: #282a36;
+  background-color: #fff;
+  opacity: 0.7;
   clip-path: polygon(92% 0, 100% 25%, 100% 100%, 8% 100%, 0% 75%, 0 0);
   color: white;
   animation: text-flicker 2s linear forwards;
+  transition: all 0.5s ease-in;
 }
 
 @keyframes text-flicker {
