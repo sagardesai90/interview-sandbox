@@ -128,7 +128,7 @@ export default class CodingPage extends React.Component {
       <RemoveScroll>
         <React.Fragment>
           <Header
-            style={{ background: "#1d1f27" }}
+            style={{ background: "#282a36" }}
             extras={
               <div>
                 {this.state.createdon
