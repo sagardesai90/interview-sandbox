@@ -1,0 +1,92 @@
+.dd-wrapper {
+  /* border-style: dotted; */
+  /* width: 25%; */
+  /* transform: translateX(-100%); */
+  float: right;
+  z-index: 99;
+  background-color: #fcee09;
+  color: black;
+  clip-path: polygon(92% 0, 100% 25%, 100% 100%, 8% 100%, 0% 75%, 0 0);
+}
+
+.dd-header-title {
+  padding: 0.3rem;
+  font-size: small;
+}
+
+ul {
+  list-style: none;
+  padding: 0.6rem;
+  margin: 0;
+  font-size: small;
+}
+
+li:hover {
+  background-color: #282a36;
+  clip-path: polygon(92% 0, 100% 25%, 100% 100%, 8% 100%, 0% 75%, 0 0);
+  color: white;
+  animation: text-flicker 2s linear forwards;
+}
+
+@keyframes text-flicker {
+  2% {
+    color: rgb(230, 0, 120);
+    text-shadow: 0 0 15px rgb(230, 0, 120);
+  }
+  3% {
+    color: rgba(120, 0, 50, 0.5);
+    text-shadow: none;
+  }
+  6% {
+    color: rgb(230, 0, 120);
+    text-shadow: 0 0 15px rgb(230, 0, 120);
+  }
+  9% {
+    color: rgba(120, 0, 50, 0.5);
+    text-shadow: none;
+  }
+  11% {
+    color: rgb(230, 0, 120);
+    text-shadow: 0 0 15px rgb(230, 0, 120);
+  }
+  14% {
+    color: rgba(120, 0, 50, 0.5);
+    text-shadow: none;
+  }
+  18% {
+    color: rgb(230, 0, 120);
+    text-shadow: 0 0 15px rgb(230, 0, 120);
+  }
+  32% {
+    color: rgb(230, 0, 120);
+    text-shadow: 0 0 15px rgb(230, 0, 120);
+  }
+  33% {
+    color: rgba(120, 0, 50, 0.5);
+    text-shadow: none;
+  }
+  37% {
+    color: rgb(230, 0, 120);
+    text-shadow: 0 0 15px rgb(230, 0, 120);
+  }
+  39% {
+    color: rgba(120, 0, 50, 0.5);
+    text-shadow: none;
+  }
+  43% {
+    color: rgb(230, 0, 120);
+    text-shadow: 0 0 15px rgb(230, 0, 120);
+  }
+  46% {
+    color: rgba(120, 0, 50, 0.5);
+    text-shadow: none;
+  }
+  47% {
+    color: rgb(230, 0, 120);
+    text-shadow: 0 0 15px rgb(230, 0, 120);
+  }
+  100% {
+    color: rgb(230, 0, 120);
+    text-shadow: 0 0 15px rgb(230, 0, 120);
+  }
+}

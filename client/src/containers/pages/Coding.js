@@ -6,21 +6,56 @@ import "./Coding.css";
 import VideoChat from "../../components/VideoChat";
 import Eval from "../../components/Eval";
 import { RemoveScroll } from "react-remove-scroll";
+import Dropdown from "../../components/Dropdown";
 
 require("codemirror/lib/codemirror.css");
-require("codemirror/mode/javascript/javascript");
 require("codemirror/theme/dracula.css");
+require("codemirror/mode/javascript/javascript");
+require("codemirror/mode/ruby/ruby");
+require("codemirror/mode/python/python");
+require("codemirror/mode/jsx/jsx");
+require("codemirror/mode/css/css");
 
 export default class CodingPage extends React.Component {
-  state = {
-    code: "Loading...",
-    loading: true,
-    cursorPosition: {
-      line: 0,
-      ch: 0,
-    },
-    witeboard: null,
-  };
+  constructor() {
+    super();
+    this.state = {
+      code: "Loading...",
+      loading: true,
+      mode: "python",
+      language: [
+        {
+          id: 0,
+          title: "Javascript",
+          mode: "javascript",
+          selected: false,
+          key: "language",
+        },
+        {
+          id: 1,
+          title: "Python",
+          mode: "python",
+          selected: false,
+          key: "language",
+        },
+        { id: 2, title: "JSX", mode: "jsx", selected: false, key: "language" },
+        {
+          id: 3,
+          title: "Ruby",
+          mode: "ruby",
+          selected: false,
+          key: "language",
+        },
+        { id: 4, title: "CSS", mode: "css", selected: false, key: "language" },
+      ],
+      cursorPosition: {
+        line: 0,
+        ch: 0,
+      },
+      witeboard: null,
+    };
+    this.toggleLanguage = this.toggleLanguage.bind(this);
+  }
   componentDidMount = () => {
     const { params } = this.props.match;
     console.log(params);
@@ -57,10 +92,23 @@ export default class CodingPage extends React.Component {
         self.codemirror.getCodeMirror().setValue("No Sessions Found!");
       });
   };
+
+  toggleLanguage(id, key, mode) {
+    let temp = this.state[key];
+    temp[id].selected = !temp[id].selected;
+    let newMode = this.state[key][id];
+    this.setState({
+      [key]: temp,
+      mode: newMode["mode"],
+    });
+    console.log(newMode["mode"], "newMode");
+  }
+
   changeCursorPos = () => {
     const { line, ch } = this.state.cursorPosition;
     this.codemirror.getCodeMirror().doc.setCursor(line, ch);
   };
+
   onChange = (newVal, change) => {
     console.log(newVal, change);
     this.setState(
@@ -74,6 +122,7 @@ export default class CodingPage extends React.Component {
     );
     this.codeRef.child("content").set(newVal);
   };
+
   render() {
     return (
       <RemoveScroll>
@@ -90,6 +139,12 @@ export default class CodingPage extends React.Component {
           />
           <div className="coding">
             <div className="coding-page">
+              <Dropdown
+                title="Select Language"
+                list={this.state.language}
+                toggleItem={this.toggleLanguage}
+                className="dropdown"
+              />
               <CodeMirror
                 ref={(r) => (this.codemirror = r)}
                 className="code-mirror-container"
@@ -99,7 +154,7 @@ export default class CodingPage extends React.Component {
                   theme: "dracula",
                   lineNumbers: true,
                   readOnly: false,
-                  mode: "javascript",
+                  mode: this.state.mode,
                 }}
               />
             </div>
