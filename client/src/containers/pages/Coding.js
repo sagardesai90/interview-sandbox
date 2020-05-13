@@ -53,12 +53,13 @@ export default class CodingPage extends React.Component {
         ch: 0,
       },
       witeboard: null,
+      sessionid: null,
     };
     this.toggleLanguage = this.toggleLanguage.bind(this);
   }
   componentDidMount = () => {
     const { params } = this.props.match;
-    console.log(params);
+
     let self = this;
     database()
       .ref("/code-sessions/" + params.sessionid)
@@ -69,10 +70,10 @@ export default class CodingPage extends React.Component {
             code: snapshot.val().content + "",
             createdon: snapshot.val().createdon,
             witeboard: "https://witeboard.com/" + params.sessionid,
+            sessionid: params.sessionid,
           },
           () => {
             let content = snapshot.val().content;
-            //   console.log(this.codemirror.getCodeMirror());
 
             self.codemirror.getCodeMirror().setValue(content);
           }
@@ -101,7 +102,6 @@ export default class CodingPage extends React.Component {
       [key]: temp,
       mode: newMode["mode"],
     });
-    console.log(newMode["mode"], "newMode");
   }
 
   changeCursorPos = () => {
@@ -110,7 +110,6 @@ export default class CodingPage extends React.Component {
   };
 
   onChange = (newVal, change) => {
-    console.log(newVal, change);
     this.setState(
       {
         cursorPosition: {
@@ -159,13 +158,17 @@ export default class CodingPage extends React.Component {
               />
             </div>
             <div>
-              <iframe className="witeboard" src={this.state.witeboard}></iframe>
+              <iframe
+                title="Witeboard"
+                className="witeboard"
+                src={this.state.witeboard}
+              ></iframe>
             </div>
             <div className="lowerMenu">
               <Eval code={this.state.code} />
             </div>
             <div className="lowerMenu">
-              <VideoChat />
+              <VideoChat sessionid={this.state.sessionid} />
             </div>
           </div>
         </React.Fragment>

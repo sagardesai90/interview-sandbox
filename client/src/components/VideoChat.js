@@ -20,7 +20,7 @@ const Video = styled.video`
   height: calc(15vh);
 `;
 
-function VideoChat() {
+const VideoChat = ({ sessionid }) => {
   const [yourID, setYourID] = useState("");
   const [users, setUsers] = useState({});
   const [stream, setStream] = useState();
@@ -32,6 +32,8 @@ function VideoChat() {
   const userVideo = useRef();
   const partnerVideo = useRef();
   const socket = useRef();
+
+  console.log(sessionid, users, "sessionid & users in VideoChat");
 
   useEffect(() => {
     socket.current = io.connect(
@@ -49,8 +51,8 @@ function VideoChat() {
     socket.current.on("yourID", (id) => {
       setYourID(id);
     });
-    socket.current.on("allUsers", (users) => {
-      setUsers(users);
+    socket.current.on("allUsers", (users, sessionid) => {
+      setUsers(users, sessionid);
     });
 
     socket.current.on("hey", (data) => {
@@ -60,7 +62,7 @@ function VideoChat() {
     });
   }, []);
 
-  function callPeer(id) {
+  function callPeer(id, sessionid) {
     const peer = new Peer({
       initiator: true,
       trickle: false,
@@ -130,6 +132,7 @@ function VideoChat() {
       </div>
     );
   }
+
   return (
     <Container className="videoContainer">
       <Row>
@@ -153,6 +156,6 @@ function VideoChat() {
       </div>
     </Container>
   );
-}
+};
 
 export default VideoChat;
