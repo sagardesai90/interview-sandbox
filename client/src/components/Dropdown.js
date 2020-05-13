@@ -28,8 +28,12 @@ class Dropdown extends React.Component {
     const { list } = this.props;
     const { listOpen, headerTitle } = this.state;
     return (
-      <div className="dd-wrapper">
-        <div className="dd-header" onMouseOver={() => this.toggleList()}>
+      <div
+        className="dd-wrapper"
+        onMouseEnter={() => this.toggleList()}
+        onMouseLeave={() => this.toggleList()}
+      >
+        <div className="dd-header">
           <div className="dd-header-title">{headerTitle}</div>
           {listOpen ? (
             <FontAwesome name="angle-up" size="2x" />

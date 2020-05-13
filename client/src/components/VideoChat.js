@@ -28,6 +28,7 @@ const VideoChat = ({ sessionid }) => {
   const [caller, setCaller] = useState("");
   const [callerSignal, setCallerSignal] = useState();
   const [callAccepted, setCallAccepted] = useState(false);
+  const [session, setSession] = useState(sessionid);
 
   const userVideo = useRef();
   const partnerVideo = useRef();
