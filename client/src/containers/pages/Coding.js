@@ -15,6 +15,7 @@ require("codemirror/mode/ruby/ruby");
 require("codemirror/mode/python/python");
 require("codemirror/mode/jsx/jsx");
 require("codemirror/mode/css/css");
+require("codemirror/addon/display/placeholder");
 
 export default class CodingPage extends React.Component {
   constructor() {
@@ -102,6 +103,7 @@ export default class CodingPage extends React.Component {
       [key]: temp,
       mode: newMode["mode"],
     });
+    console.log(this.state, "state in Coding.js");
   }
 
   changeCursorPos = () => {
@@ -155,6 +157,7 @@ export default class CodingPage extends React.Component {
                   readOnly: false,
                   mode: this.state.mode,
                 }}
+                placeholder="this is the placeholder text"
               />
             </div>
             <div>
