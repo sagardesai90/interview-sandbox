@@ -14,6 +14,15 @@
   font-size: small;
 }
 
+.btn__label {
+  font-size: 0.3rem;
+  position: sticky;
+  padding: 0.2rem;
+  margin: 0.2rem;
+  left: 80%;
+  z-index: 3;
+}
+
 ul {
   list-style: none;
   padding: 0.6rem;

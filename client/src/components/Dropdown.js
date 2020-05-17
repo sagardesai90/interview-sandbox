@@ -54,6 +54,7 @@ class Dropdown extends React.Component {
             ))}
           </ul>
         )}
+        <span className="btn__label">{this.props.currLang}</span>
       </div>
     );
   }

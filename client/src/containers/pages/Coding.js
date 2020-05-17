@@ -51,8 +51,10 @@ export default class CodingPage extends React.Component {
           selected: false,
           key: "language",
         },
+
         // { id: 4, title: "CSS", mode: "css", selected: false, key: "language" },
       ],
+      currlang: "Python",
       cursorPosition: {
         line: 0,
         ch: 0,
@@ -107,6 +109,7 @@ export default class CodingPage extends React.Component {
       [key]: temp,
       mode: newMode["mode"],
       language_id: newMode["language_id"],
+      currlang: newMode["title"],
     });
     console.log(this.state, "state in Coding.js");
   }
@@ -151,6 +154,7 @@ export default class CodingPage extends React.Component {
                 list={this.state.language}
                 toggleItem={this.toggleLanguage}
                 className="dropdown"
+                currLang={this.state.currlang}
               />
               <CodeMirror
                 ref={(r) => (this.codemirror = r)}
