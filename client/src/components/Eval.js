@@ -1,4 +1,5 @@
 import React from "react";
+import Spinner from "./Spinner.js";
 import "./Eval.css";
 
 class Eval extends React.Component {
@@ -9,6 +10,7 @@ class Eval extends React.Component {
       language_id: this.props.language_id,
       token: null,
       evalOutput: null,
+      loading: false,
     };
     this.runCode = this.runCode.bind(this);
     this.useToken = this.useToken.bind(this);
@@ -35,7 +37,7 @@ class Eval extends React.Component {
       })
       .then((data) => {
         let evalOutput = data.stdout;
-        this.setState({ evalOutput: evalOutput });
+        this.setState({ evalOutput: evalOutput, loading: false });
       })
       .catch((err) => {
         console.log(err);
@@ -43,6 +45,7 @@ class Eval extends React.Component {
   }
 
   async runCode() {
+    this.setState({ loading: true });
     const initialToken = await fetch(
       "https://judge0.p.rapidapi.com/submissions",
       {
@@ -82,18 +85,36 @@ class Eval extends React.Component {
 
   render() {
     let evalOutput = this.state.evalOutput;
+    let loading = this.state.loading;
+    const conditionalRender = () => {
+      if (loading) {
+        return <Spinner />;
+      } else if (!loading && !evalOutput) {
+        return (
+          <p style={{ padding: "1rem", color: "#66ff66" }}>
+            Terminal output here.
+          </p>
+        );
+      } else if (evalOutput) {
+        return (
+          <p style={{ padding: "1rem", color: "#66ff66" }}>{evalOutput}</p>
+        );
+      }
+    };
+
     return (
       <div className="">
         <button className="evalBtn" onClick={this.runCode.bind(this)}>
           Run Code
         </button>
-        <p style={{ padding: "1rem", color: "#66ff66" }}>
+        {/* <p style={{ padding: "1rem", color: "#66ff66" }}>
           {evalOutput ? (
             <div>{evalOutput}</div>
           ) : (
             <div>Terminal output here.</div>
           )}
-        </p>
+        </p> */}
+        {conditionalRender()}
       </div>
     );
   }
