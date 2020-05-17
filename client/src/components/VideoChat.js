@@ -34,7 +34,7 @@ const VideoChat = ({ sessionid }) => {
   const partnerVideo = useRef();
   const socket = useRef();
 
-  console.log(sessionid, users, "sessionid & users in VideoChat");
+  // console.log(sessionid, users, "sessionid & users in VideoChat");
 
   useEffect(() => {
     socket.current = io.connect(

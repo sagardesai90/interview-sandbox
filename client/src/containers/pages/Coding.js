@@ -24,9 +24,11 @@ export default class CodingPage extends React.Component {
       code: "Loading...",
       loading: true,
       mode: "python",
+      language_id: 71,
       language: [
         {
           id: 0,
+          language_id: 63,
           title: "Javascript",
           mode: "javascript",
           selected: false,
@@ -34,20 +36,22 @@ export default class CodingPage extends React.Component {
         },
         {
           id: 1,
+          language_id: 71,
           title: "Python",
           mode: "python",
           selected: false,
           key: "language",
         },
-        { id: 2, title: "JSX", mode: "jsx", selected: false, key: "language" },
+        // { id: 2, title: "JSX", mode: "jsx", selected: false, key: "language" },
         {
-          id: 3,
+          id: 2,
+          language_id: 72,
           title: "Ruby",
           mode: "ruby",
           selected: false,
           key: "language",
         },
-        { id: 4, title: "CSS", mode: "css", selected: false, key: "language" },
+        // { id: 4, title: "CSS", mode: "css", selected: false, key: "language" },
       ],
       cursorPosition: {
         line: 0,
@@ -102,6 +106,7 @@ export default class CodingPage extends React.Component {
     this.setState({
       [key]: temp,
       mode: newMode["mode"],
+      language_id: newMode["language_id"],
     });
     console.log(this.state, "state in Coding.js");
   }
@@ -122,6 +127,7 @@ export default class CodingPage extends React.Component {
       () => {}
     );
     this.codeRef.child("content").set(newVal);
+    // console.log("this.state", this.state.code);
   };
 
   render() {
@@ -168,7 +174,10 @@ export default class CodingPage extends React.Component {
               ></iframe>
             </div>
             <div className="lowerMenu">
-              <Eval code={this.state.code} />
+              <Eval
+                code={this.state.code}
+                language_id={this.state.language_id}
+              />
             </div>
             <div className="lowerMenu">
               <VideoChat sessionid={this.state.sessionid} />
