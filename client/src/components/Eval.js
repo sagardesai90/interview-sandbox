@@ -90,20 +90,14 @@ class Eval extends React.Component {
       if (loading) {
         return <Spinner />;
       } else if (!loading && !evalOutput) {
-        return (
-          <p style={{ padding: "1rem", color: "#66ff66" }}>
-            Terminal output here.
-          </p>
-        );
+        return <p className="codeRes">Terminal output here.</p>;
       } else if (evalOutput) {
-        return (
-          <p style={{ padding: "1rem", color: "#66ff66" }}>{evalOutput}</p>
-        );
+        return <p className="codeRes">{evalOutput}</p>;
       }
     };
 
     return (
-      <div className="">
+      <div>
         <button className="evalBtn" onClick={this.runCode.bind(this)}>
           Run Code
         </button>
