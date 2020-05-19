@@ -6,6 +6,13 @@
   100% {
     transform: translate3d(-50%, -50%, 0) rotateZ(360deg);
   }
+
+  from {
+    box-shadow: 1px 0 0 #ea36af, -2px 0 0 #ea36af;
+  }
+  to {
+    box-shadow: 2px 0.5px 2px #ea36af, -1px -0.5px 2px #ea36af;
+  }
 }
 
 .spinny-loader {
@@ -28,7 +35,7 @@
   height: 5px;
   transform: translate3d(-50%, -50%, 0);
   border-radius: 50px;
-  background-color: #fcee09;
+  background-color: #66ff66;
 }
 
 .spinny-loader::before,
@@ -42,12 +49,14 @@
   border-radius: 100px;
   border-style: solid;
   border-width: 12px;
-  border-color: #fcee09 transparent #fcee09 transparent;
+  border-color: #66ff66 transparent #66ff66 transparent;
 
   animation-name: spinny;
   animation-duration: 0.6s;
   animation-iteration-count: infinite;
   animation-timing-function: ease-in-out;
+
+  animation-direction: alternate;
 }
 
 .spinny-loader::after {
