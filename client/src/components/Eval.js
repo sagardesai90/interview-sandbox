@@ -1,5 +1,6 @@
 import React from "react";
 import Spinner from "./Spinner.js";
+import { database } from "firebase";
 import "./Eval.css";
 
 class Eval extends React.Component {
@@ -11,13 +12,27 @@ class Eval extends React.Component {
       token: null,
       evalOutput: null,
       loading: false,
+      sessionid: this.props.sessionid,
     };
     this.runCode = this.runCode.bind(this);
     this.useToken = this.useToken.bind(this);
   }
 
   async componentWillReceiveProps(newProps) {
-    this.setState({ code: newProps.code, language_id: newProps.language_id });
+    this.setState({
+      code: newProps.code,
+      language_id: newProps.language_id,
+      sessionid: this.props.sessionid,
+    });
+    let self = this;
+    database()
+      .ref("code-sessions/" + this.props.sessionid)
+      .once("value")
+      .then((snapshot) => {
+        let val = snapshot.val() || "Terminal output here.";
+        let valOut = val.evalOutput;
+        self.setState({ evalOutput: valOut });
+      });
   }
 
   async useToken() {
@@ -38,6 +53,12 @@ class Eval extends React.Component {
       .then((data) => {
         let evalOutput = data.stdout;
         this.setState({ evalOutput: evalOutput, loading: false });
+        let self = this;
+        database()
+          .ref("code-sessions/" + this.props.sessionid)
+          .update({
+            evalOutput: this.state.evalOutput,
+          });
       })
       .catch((err) => {
         console.log(err);

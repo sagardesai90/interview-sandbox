@@ -111,7 +111,6 @@ export default class CodingPage extends React.Component {
       language_id: newMode["language_id"],
       currlang: newMode["title"],
     });
-    console.log(this.state, "state in Coding.js");
   }
 
   changeCursorPos = () => {
@@ -130,7 +129,6 @@ export default class CodingPage extends React.Component {
       () => {}
     );
     this.codeRef.child("content").set(newVal);
-    // console.log("this.state", this.state.code);
   };
 
   render() {
@@ -181,6 +179,7 @@ export default class CodingPage extends React.Component {
               <Eval
                 code={this.state.code}
                 language_id={this.state.language_id}
+                sessionid={this.state.sessionid}
               />
             </div>
             <div className="lowerMenu">
