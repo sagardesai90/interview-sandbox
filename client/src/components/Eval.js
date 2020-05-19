@@ -122,13 +122,6 @@ class Eval extends React.Component {
         <button className="evalBtn" onClick={this.runCode.bind(this)}>
           Run Code
         </button>
-        {/* <p style={{ padding: "1rem", color: "#66ff66" }}>
-          {evalOutput ? (
-            <div>{evalOutput}</div>
-          ) : (
-            <div>Terminal output here.</div>
-          )}
-        </p> */}
         {conditionalRender()}
       </div>
     );
