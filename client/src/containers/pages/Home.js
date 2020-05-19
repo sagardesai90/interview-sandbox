@@ -18,6 +18,7 @@ export default class HomePage extends React.Component {
       });
   };
 
+  // This function creates a new entry in our database when the user hits the 'Let's go' button
   onNewGround = () => {
     database()
       .ref("code-sessions/" + this.state.key)
@@ -35,8 +36,8 @@ export default class HomePage extends React.Component {
         />
         <div className="homepage">
           <p className="title">
-            {/* <br /> */}
             Share Code with
+            {/* Where I cycle through some use cases */}
             <Typewriter
               className="homepage"
               options={{
@@ -77,6 +78,3 @@ export default class HomePage extends React.Component {
     );
   }
 }
-
-// WEBPACK FOOTER //
-// ./src/containers/pages/Home.js

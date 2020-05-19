@@ -68,6 +68,8 @@ export default class CodingPage extends React.Component {
     const { params } = this.props.match;
 
     let self = this;
+
+    //Where you store the code in the Firebase Realtime database
     database()
       .ref("/code-sessions/" + params.sessionid)
       .once("value")
@@ -101,6 +103,7 @@ export default class CodingPage extends React.Component {
       });
   };
 
+  //Lets you select between JS, Python, Ruby
   toggleLanguage(id, key, mode) {
     let temp = this.state[key];
     temp[id].selected = !temp[id].selected;
@@ -113,11 +116,13 @@ export default class CodingPage extends React.Component {
     });
   }
 
+  //To keep track of where the cursor is currently
   changeCursorPos = () => {
     const { line, ch } = this.state.cursorPosition;
     this.codemirror.getCodeMirror().doc.setCursor(line, ch);
   };
 
+  //This is where the code editor handles changes from user input
   onChange = (newVal, change) => {
     this.setState(
       {
@@ -147,6 +152,7 @@ export default class CodingPage extends React.Component {
           />
           <div className="coding">
             <div className="coding-page">
+              {/* This is where the DROPDOWN menu goes */}
               <Dropdown
                 title="Select Language"
                 list={this.state.language}
@@ -154,6 +160,7 @@ export default class CodingPage extends React.Component {
                 className="dropdown"
                 currLang={this.state.currlang}
               />
+              {/* This is where the CODE EDITOR goes */}
               <CodeMirror
                 ref={(r) => (this.codemirror = r)}
                 className="code-mirror-container"
@@ -169,6 +176,7 @@ export default class CodingPage extends React.Component {
               />
             </div>
             <div>
+              {/* This is where the WHITEBOARD goes */}
               <iframe
                 title="Witeboard"
                 className="witeboard"
@@ -176,6 +184,7 @@ export default class CodingPage extends React.Component {
               ></iframe>
             </div>
             <div className="lowerMenu">
+              {/* This is where the CODE EXECUTION happens */}
               <Eval
                 code={this.state.code}
                 language_id={this.state.language_id}
@@ -183,6 +192,7 @@ export default class CodingPage extends React.Component {
               />
             </div>
             <div className="lowerMenu">
+              {/* This is where the VIDEO CHAT goes */}
               <VideoChat sessionid={this.state.sessionid} />
             </div>
           </div>
