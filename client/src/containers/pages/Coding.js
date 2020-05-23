@@ -193,7 +193,11 @@ export default class CodingPage extends React.Component {
             </div>
             <div className="lowerMenu">
               {/* This is where the VIDEO CHAT goes */}
-              <VideoChat sessionid={this.state.sessionid} />
+              {this.state.sessionid === null ? (
+                <div />
+              ) : (
+                <VideoChat sessionid={this.state.sessionid} />
+              )}
             </div>
           </div>
         </React.Fragment>

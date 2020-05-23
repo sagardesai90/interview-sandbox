@@ -5,32 +5,15 @@ const server = http.createServer(app);
 const socket = require("socket.io");
 const io = socket(server);
 const PORT = process.env.PORT || 8000;
-
-const users = {};
+const sessions = require("./sessions");
 
 io.on("connection", (socket) => {
-  if (!users[socket.id]) {
-    users[socket.id] = socket.id;
-    console.log("A user has connected", socket.id);
-  }
-  socket.emit("yourID", socket.id);
-  io.sockets.emit("allUsers", users);
-  socket.on("disconnect", () => {
-    delete users[socket.id];
-  });
+  var sessionid = socket.handshake["query"]["sessionid"];
+  const session = sessions.getSession(sessionid, io);
+  const memberName = session.generateMemberName();
 
-  socket.on("callUser", (data) => {
-    io.to(data.userToCall).emit("hey", {
-      signal: data.signalData,
-      from: data.from,
-    });
-    console.log("User call initiated.");
-  });
-
-  socket.on("acceptCall", (data) => {
-    io.to(data.to).emit("callAccepted", data.signal);
-    console.log("User call accepted.");
-  });
+  session.addMember(memberName, socket);
+  console.log(session, "session members");
 });
 
 const port = PORT || 8000;

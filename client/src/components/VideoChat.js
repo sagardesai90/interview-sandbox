@@ -20,26 +20,32 @@ const Video = styled.video`
   height: calc(15vh);
 `;
 
-const VideoChat = ({ sessionid }) => {
+const VideoChat = (props) => {
   const [yourID, setYourID] = useState("");
-  const [users, setUsers] = useState({});
+  const [members, setMembers] = useState([]);
   const [stream, setStream] = useState();
   const [receivingCall, setReceivingCall] = useState(false);
   const [caller, setCaller] = useState("");
   const [callerSignal, setCallerSignal] = useState();
   const [callAccepted, setCallAccepted] = useState(false);
-  const [session, setSession] = useState(sessionid);
 
   const userVideo = useRef();
   const partnerVideo = useRef();
   const socket = useRef();
 
-  console.log(sessionid, "session id", users, " users in VideoChat");
+  // console.log(props.sessionid, "session id", users, " users in VideoChat");
 
   useEffect(() => {
-    socket.current = io.connect(
-      "https://fathomless-journey-95730.herokuapp.com/"
+    socket.current = io(
+      "https://fathomless-journey-95730.herokuapp.com/",
+      // "http://localhost:8000",
+      {
+        query: {
+          sessionid: props.sessionid,
+        },
+      }
     );
+
     navigator.mediaDevices
       .getUserMedia({ video: true, audio: true })
       .then((stream) => {
@@ -50,10 +56,12 @@ const VideoChat = ({ sessionid }) => {
       });
 
     socket.current.on("yourID", (id) => {
+      console.log(id, "id");
       setYourID(id);
     });
-    socket.current.on("allUsers", (users, sessionid) => {
-      setUsers(users, sessionid);
+    socket.current.on("allUsers", (members) => {
+      console.log(members, "members");
+      setMembers(members);
     });
 
     socket.current.on("hey", (data) => {
@@ -61,9 +69,11 @@ const VideoChat = ({ sessionid }) => {
       setCaller(data.from);
       setCallerSignal(data.signal);
     });
-  }, []);
+    console.log(props.sessionid, "sessionid is here in UseEffect");
+  }, [props.sessionid]);
 
-  function callPeer(id, sessionid) {
+  //takes in callUser & acceptCall
+  function callPeer(id) {
     const peer = new Peer({
       initiator: true,
       trickle: false,
@@ -97,6 +107,7 @@ const VideoChat = ({ sessionid }) => {
       trickle: false,
       stream: stream,
     });
+
     peer.on("signal", (data) => {
       socket.current.emit("acceptCall", { signal: data, to: caller });
     });
@@ -137,16 +148,16 @@ const VideoChat = ({ sessionid }) => {
   return (
     <Container className="videoContainer">
       <Row>
-        {Object.keys(users).map((key) => {
-          if (key === yourID) {
-            return null;
-          }
-          return (
-            <button className="btn callButton" onClick={() => callPeer(key)}>
+        {members
+          .filter((memberName) => memberName !== yourID)
+          .map((memberName) => (
+            <button
+              className="btn callButton"
+              onClick={() => callPeer(memberName)}
+            >
               <span className="btn__content">Call</span>
             </button>
-          );
-        })}
+          ))}
         <div>{incomingCall}</div>
       </Row>
       <div>
