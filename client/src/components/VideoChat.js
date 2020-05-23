@@ -33,8 +33,6 @@ const VideoChat = (props) => {
   const partnerVideo = useRef();
   const socket = useRef();
 
-  // console.log(props.sessionid, "session id", users, " users in VideoChat");
-
   useEffect(() => {
     socket.current = io(
       "https://fathomless-journey-95730.herokuapp.com/",
