@@ -35,8 +35,8 @@ const VideoChat = (props) => {
 
   useEffect(() => {
     socket.current = io(
-      // "https://fathomless-journey-95730.herokuapp.com/",
-      "http://localhost:8000",
+      "https://fathomless-journey-95730.herokuapp.com/",
+      // "http://localhost:8000",
       {
         query: {
           sessionid: props.sessionid,
