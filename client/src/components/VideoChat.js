@@ -11,7 +11,7 @@ const Container = styled.div`
 
 const Row = styled.div`
   display: flex;
-  width: 100%;
+  // width: 100%;
 `;
 
 const Video = styled.video`
@@ -35,8 +35,8 @@ const VideoChat = (props) => {
 
   useEffect(() => {
     socket.current = io(
-      "https://fathomless-journey-95730.herokuapp.com/",
-      // "http://localhost:8000",
+      // "https://fathomless-journey-95730.herokuapp.com/",
+      "http://localhost:8000",
       {
         query: {
           sessionid: props.sessionid,
@@ -68,7 +68,13 @@ const VideoChat = (props) => {
       setCallerSignal(data.signal);
     });
     console.log(props.sessionid, "sessionid is here in UseEffect");
+    // callPeer()
   }, [props.sessionid]);
+
+  // function toggleVideo(stream) {
+  //   console.log("toggleVideo clicked");
+  //   navigator.mediaDevices.getUserMedia({ video: false, audio: false });
+  // }
 
   //takes in callUser & acceptCall
   function callPeer(id) {
@@ -142,10 +148,14 @@ const VideoChat = (props) => {
       </div>
     );
   }
-
+  console.log(members, "members");
   return (
     <Container className="videoContainer">
       <Row>
+        {/* <button className="btn callButton" onClick={() => toggleVideo()}>
+          Camera
+        </button>
+        <button className="btn callButton">Mic</button> */}
         {members
           .filter((memberName) => memberName !== yourID)
           .map((memberName) => (

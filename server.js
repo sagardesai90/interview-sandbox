@@ -13,6 +13,7 @@ io.on("connection", (socket) => {
   if (Object.keys(session.members).length < 2) {
     const memberName = session.generateMemberName();
     session.addMember(memberName, socket);
+    console.log(memberName + " has been added to session " + sessionid);
   }
   console.log(session, "session members");
 });

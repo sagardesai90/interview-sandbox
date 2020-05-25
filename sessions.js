@@ -12,6 +12,7 @@ class Session {
 
   // gives list of member sessionIds
   getMembers() {
+    // console.log(_.keys(this.members), "_.keys(this.members)");
     return _.keys(this.members);
   }
 
@@ -42,7 +43,7 @@ class Session {
         //         sessionId: memberName,
         //     });
         // }
-        console.log("A user has left the call.");
+        console.log(memberName + " has left the call.");
       } else {
         // if room is empty, remove it from the internal hash.
         // since thats the only reference to it, this Session object will be garbage collected
@@ -56,7 +57,8 @@ class Session {
 
   setupNewMember(memberName, socket) {
     socket.emit("yourID", memberName);
-    socket.emit("allUsers", this.getMembers());
+    this.io.in(this.sessionId).emit("allUsers", this.getMembers());
+
     socket.on("callUser", (data) => {
       // TODO: Find a bettter event name than "hey"
       this.io.to(this.getSocketIdForMember(data.userToCall)).emit("hey", {
