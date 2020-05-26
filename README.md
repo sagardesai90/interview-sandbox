@@ -1,4 +1,4 @@
-# Interview Sandbox
+# ![Chad](./client/public/chad.png) Interview Sandbox
 
 ![Flow](./client/public/Final.gif)
 
