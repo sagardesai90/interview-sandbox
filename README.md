@@ -8,7 +8,7 @@ An application that was inspired by the fact that interviews are meant to intera
 
 ## Stack
 
-React, Firebase (realtime database), CodeMirror for the text editor, WebRTC & sockets for video chat, and Witeboard integration. There are a couple bugs and some features still being built, namely the termainl output, which will use the Judge0 API.
+React, Firebase (realtime database), CodeMirror for the text editor, WebRTC & sockets for video chat, and Witeboard integration. There are a couple bugs and some features still being built.
 
 If you're using the app and need to reference your code/drawings later, just save the link!
 

@@ -2,7 +2,6 @@
   "name": "interview-sandbox",
   "version": "0.1.0",
   "private": true,
-
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
@@ -10,6 +9,7 @@
     "axios": "^0.19.2",
     "create-react-class": "^15.6.3",
     "firebase": "^7.14.2",
+    "font-awesome": "^4.7.0",
     "random-key": "^0.3.2",
     "react": "^16.13.1",
     "react-codemirror": "^1.0.0",

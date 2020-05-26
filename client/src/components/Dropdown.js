@@ -1,5 +1,6 @@
 import React from "react";
 import FontAwesome from "react-fontawesome";
+import "font-awesome/css/font-awesome.min.css";
 import "./Dropdown.css";
 
 class Dropdown extends React.Component {
@@ -34,12 +35,14 @@ class Dropdown extends React.Component {
         onMouseLeave={() => this.toggleList()}
       >
         <div className="dd-header">
-          <div className="dd-header-title">{headerTitle}</div>
-          {listOpen ? (
-            <FontAwesome name="angle-up" size="2x" />
-          ) : (
-            <FontAwesome name="angle-down" size="2x" />
-          )}
+          <div className="dd-header-title">
+            {headerTitle}
+            {listOpen ? (
+              <FontAwesome name="angle-up" size="5px" />
+            ) : (
+              <FontAwesome name="angle-down" size="5px" />
+            )}
+          </div>
         </div>
         {listOpen && (
           <ul className="dd-list">
