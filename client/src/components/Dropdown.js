@@ -1,5 +1,11 @@
 import React from "react";
-import FontAwesome from "react-fontawesome";
+import {
+  FaAngleDown,
+  FaAngleUp,
+  FaJsSquare,
+  FaPython,
+  FaGem,
+} from "react-icons/fa";
 import "font-awesome/css/font-awesome.min.css";
 import "./Dropdown.css";
 
@@ -37,11 +43,7 @@ class Dropdown extends React.Component {
         <div className="dd-header">
           <div className="dd-header-title">
             {headerTitle}
-            {listOpen ? (
-              <FontAwesome name="angle-up" size="5px" />
-            ) : (
-              <FontAwesome name="angle-down" size="5px" />
-            )}
+            {listOpen ? <FaAngleUp /> : <FaAngleDown />}
           </div>
         </div>
         {listOpen && (
@@ -52,6 +54,11 @@ class Dropdown extends React.Component {
                 key={item.id}
                 onClick={() => this.props.toggleItem(item.id, item.key)}
               >
+                {/* <FontAwesomeIcon icon={item.fa_icon} size="5px" /> */}
+                {/* <`${item.fa_icon}` /> */}
+                {item.fa_icon === "FaJsSquare" && <FaJsSquare />}
+                {item.fa_icon === "FaPython" && <FaPython />}
+                {item.fa_icon === "FaGem" && <FaGem />}
                 {item.title}
               </li>
             ))}

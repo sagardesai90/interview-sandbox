@@ -29,16 +29,18 @@ export default class CodingPage extends React.Component {
         {
           id: 0,
           language_id: 63,
-          title: "Javascript",
+          title: " Javascript",
           mode: "javascript",
+          fa_icon: "FaJsSquare",
           selected: false,
           key: "language",
         },
         {
           id: 1,
           language_id: 71,
-          title: "Python",
+          title: " Python",
           mode: "python",
+          fa_icon: "FaPython",
           selected: false,
           key: "language",
         },
@@ -46,8 +48,9 @@ export default class CodingPage extends React.Component {
         {
           id: 2,
           language_id: 72,
-          title: "Ruby",
+          title: " Ruby",
           mode: "ruby",
+          fa_icon: "FaGem",
           selected: false,
           key: "language",
         },
@@ -154,7 +157,7 @@ export default class CodingPage extends React.Component {
             <div className="coding-page">
               {/* This is where the DROPDOWN menu goes */}
               <Dropdown
-                title="Select Language"
+                title="Select Language "
                 list={this.state.language}
                 toggleItem={this.toggleLanguage}
                 className="dropdown"
