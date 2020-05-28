@@ -13,8 +13,7 @@ require("codemirror/theme/dracula.css");
 require("codemirror/mode/javascript/javascript");
 require("codemirror/mode/ruby/ruby");
 require("codemirror/mode/python/python");
-require("codemirror/mode/jsx/jsx");
-require("codemirror/mode/css/css");
+require("codemirror/mode/swift/swift");
 require("codemirror/addon/display/placeholder");
 require("codemirror/addon/edit/matchbrackets");
 require("codemirror/addon/edit/matchtags");
@@ -48,7 +47,6 @@ export default class CodingPage extends React.Component {
           selected: false,
           key: "language",
         },
-        // { id: 2, title: "JSX", mode: "jsx", selected: false, key: "language" },
         {
           id: 2,
           language_id: 72,
@@ -58,8 +56,15 @@ export default class CodingPage extends React.Component {
           selected: false,
           key: "language",
         },
-
-        // { id: 4, title: "CSS", mode: "css", selected: false, key: "language" },
+        {
+          id: 3,
+          language_id: 83,
+          title: " Swift",
+          mode: "swift",
+          fa_icon: "FaSwift",
+          selected: false,
+          key: "language",
+        },
       ],
       currlang: "Python",
       cursorPosition: {

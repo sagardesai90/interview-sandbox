@@ -5,6 +5,7 @@ import {
   FaJsSquare,
   FaPython,
   FaGem,
+  FaSwift,
 } from "react-icons/fa";
 import "font-awesome/css/font-awesome.min.css";
 import "./Dropdown.css";
@@ -59,6 +60,7 @@ class Dropdown extends React.Component {
                 {item.fa_icon === "FaJsSquare" && <FaJsSquare />}
                 {item.fa_icon === "FaPython" && <FaPython />}
                 {item.fa_icon === "FaGem" && <FaGem />}
+                {item.fa_icon === "FaSwift" && <FaSwift />}
                 {item.title}
               </li>
             ))}
