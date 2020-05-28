@@ -16,6 +16,10 @@ require("codemirror/mode/python/python");
 require("codemirror/mode/jsx/jsx");
 require("codemirror/mode/css/css");
 require("codemirror/addon/display/placeholder");
+require("codemirror/addon/edit/matchbrackets");
+require("codemirror/addon/edit/matchtags");
+require("codemirror/addon/edit/closebrackets");
+require("codemirror/addon/edit/closetag");
 
 export default class CodingPage extends React.Component {
   constructor() {
@@ -172,6 +176,12 @@ export default class CodingPage extends React.Component {
                 options={{
                   theme: "dracula",
                   lineNumbers: true,
+                  lineWrapping: true,
+                  tabMode: "indent",
+                  matchBrackets: true,
+                  matchTags: true,
+                  autoCloseTags: true,
+                  autoCloseBrackets: true,
                   readOnly: false,
                   mode: this.state.mode,
                 }}
