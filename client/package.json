@@ -26,6 +26,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "cypress:open": "cypress open",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -44,5 +45,7 @@
       "last 1 safari version"
     ]
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "cypress": "^4.7.0"
+  }
 }

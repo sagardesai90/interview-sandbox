@@ -23,7 +23,7 @@ export default class HomePage extends React.Component {
     database()
       .ref("code-sessions/" + this.state.key)
       .set({
-        content: "Happy Coding",
+        content: 'print("happy coding")',
         createdon: Date(),
       });
     this.props.history.push("/" + this.state.key);
