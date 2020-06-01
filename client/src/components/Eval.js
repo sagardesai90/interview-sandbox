@@ -100,13 +100,26 @@ class Eval extends React.Component {
         return response.json();
       })
       .then((data) => {
-        let evalOutput = data.stdout;
-        this.setState({ evalOutput: evalOutput, loading: false });
-        database()
-          .ref("code-sessions/" + this.props.sessionid)
-          .update({
-            evalOutput: this.state.evalOutput,
+        if (data.stdout) {
+          let evalOutput = data.stdout;
+          this.setState({ evalOutput: evalOutput, loading: false });
+          database()
+            .ref("code-sessions/" + this.props.sessionid)
+            .update({
+              evalOutput: this.state.evalOutput,
+            });
+        } else if (data.stdout == null) {
+          let errOut = data.status.description;
+          this.setState({
+            evalOutput: errOut,
+            loading: false,
           });
+          database()
+            .ref("code-sessions/" + this.props.sessionid)
+            .update({
+              evalOutput: this.state.evalOutput,
+            });
+        }
       })
       .catch((err) => {
         console.log(err);
