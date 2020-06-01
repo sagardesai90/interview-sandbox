@@ -20,6 +20,10 @@
   transition: transform 0.6s 0.25s ease-out;
 }
 
+.callButton:hover {
+  opacity: 0.7;
+}
+
 .btn__content {
   top: 2px;
   left: 2px;
