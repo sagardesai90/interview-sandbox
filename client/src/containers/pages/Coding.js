@@ -7,6 +7,7 @@ import VideoChat from "../../components/VideoChat";
 import Eval from "../../components/Eval";
 import { RemoveScroll } from "react-remove-scroll";
 import Dropdown from "../../components/Dropdown";
+import ReactGA from "react-ga";
 
 require("codemirror/lib/codemirror.css");
 require("codemirror/theme/dracula.css");
@@ -19,6 +20,11 @@ require("codemirror/addon/edit/matchbrackets");
 require("codemirror/addon/edit/matchtags");
 require("codemirror/addon/edit/closebrackets");
 require("codemirror/addon/edit/closetag");
+
+function initializeAnalytics() {
+  ReactGA.initialize("UA-154969560-1");
+  ReactGA.pageview("/Coding");
+}
 
 export default class CodingPage extends React.Component {
   constructor() {
@@ -149,6 +155,7 @@ export default class CodingPage extends React.Component {
   };
 
   render() {
+    initializeAnalytics();
     return (
       <RemoveScroll>
         <React.Fragment>

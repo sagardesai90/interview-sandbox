@@ -3,7 +3,13 @@ import Header from "../../components/Header";
 import rand from "random-key";
 import { database } from "firebase";
 import Typewriter from "typewriter-effect";
+import ReactGA from "react-ga";
 import "./Home.css";
+
+function initializeAnalytics() {
+  ReactGA.initialize("UA-154969560-1");
+  ReactGA.pageview("/Home");
+}
 
 export default class HomePage extends React.Component {
   state = {
@@ -30,6 +36,7 @@ export default class HomePage extends React.Component {
     this.props.history.push("/" + this.state.key);
   };
   render() {
+    initializeAnalytics();
     return (
       <React.Fragment>
         <Header
