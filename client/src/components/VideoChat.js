@@ -2,6 +2,8 @@ import React, { useEffect, useState, useRef } from "react";
 import io from "socket.io-client";
 import Peer from "simple-peer";
 import styled from "styled-components";
+import { IconContext } from "react-icons";
+import { FaPhoneAlt, FaComments } from "react-icons/fa";
 import "./VideoChat.css";
 
 const Container = styled.div`
@@ -143,6 +145,11 @@ const VideoChat = (props) => {
           onClick={acceptCall}
           className="btn callButton"
         >
+          <IconContext.Provider
+            value={{ size: "0.8em", style: { paddingRight: "0.2rem" } }}
+          >
+            <FaComments />
+          </IconContext.Provider>
           <span className="btn__content">Accept Call</span>
         </button>
       </div>
@@ -163,6 +170,11 @@ const VideoChat = (props) => {
               className="btn callButton"
               onClick={() => callPeer(memberName)}
             >
+              <IconContext.Provider
+                value={{ size: "0.8em", style: { paddingRight: "0.2rem" } }}
+              >
+                <FaPhoneAlt />
+              </IconContext.Provider>
               <span className="btn__content">Call</span>
             </button>
           ))}

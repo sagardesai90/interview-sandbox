@@ -66,7 +66,7 @@ export default class CodingPage extends React.Component {
           key: "language",
         },
       ],
-      currlang: "Python",
+      currlang: " Python",
       cursorPosition: {
         line: 0,
         ch: 0,

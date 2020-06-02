@@ -1,6 +1,8 @@
 import React from "react";
 import Spinner from "./Spinner.js";
 import { database } from "firebase";
+import { IconContext } from "react-icons";
+import { FaRegPlayCircle } from "react-icons/fa";
 import "./Eval.css";
 
 class Eval extends React.Component {
@@ -144,6 +146,11 @@ class Eval extends React.Component {
     return (
       <div>
         <button className="evalBtn" onClick={this.runCode.bind(this)}>
+          <IconContext.Provider
+            value={{ size: "0.8em", style: { paddingRight: "0.2rem" } }}
+          >
+            <FaRegPlayCircle />
+          </IconContext.Provider>
           Run Code
         </button>
         {conditionalRender()}

@@ -1,4 +1,5 @@
 import React from "react";
+import { IconContext } from "react-icons";
 import {
   FaAngleDown,
   FaAngleUp,
@@ -66,7 +67,29 @@ class Dropdown extends React.Component {
             ))}
           </ul>
         )}
-        <span className="btn__label">{this.props.currLang}</span>
+        <span className="btn__label">
+          {this.props.currLang === " Python" && (
+            <IconContext.Provider value={{ size: "0.5rem" }}>
+              <FaPython />{" "}
+            </IconContext.Provider>
+          )}
+          {this.props.currLang === " Javascript" && (
+            <IconContext.Provider value={{ size: "0.5rem" }}>
+              <FaJsSquare />{" "}
+            </IconContext.Provider>
+          )}
+          {this.props.currLang === " Ruby" && (
+            <IconContext.Provider value={{ size: "0.5rem" }}>
+              <FaGem />{" "}
+            </IconContext.Provider>
+          )}
+          {this.props.currLang === " Swift" && (
+            <IconContext.Provider value={{ size: "0.5rem" }}>
+              <FaSwift />{" "}
+            </IconContext.Provider>
+          )}
+          {this.props.currLang}
+        </span>
       </div>
     );
   }
