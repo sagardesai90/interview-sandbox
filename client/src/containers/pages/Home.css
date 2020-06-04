@@ -21,6 +21,20 @@
   animation: text-flicker 2s linear forwards;
 }
 
+.sponsor {
+  position: absolute;
+  left: 30px;
+  bottom: 75px;
+}
+
+.Judge0 {
+  width: 150px;
+  margin-top: 0.5rem;
+  position: absolute;
+  left: 30px;
+  bottom: 20px;
+}
+
 @keyframes text-flicker {
   2% {
     color: rgb(230, 0, 120);

@@ -5,6 +5,7 @@ import { database } from "firebase";
 import Typewriter from "typewriter-effect";
 import ReactGA from "react-ga";
 import "./Home.css";
+import Judge0 from "../../components/Judge0.png";
 
 function initializeAnalytics() {
   ReactGA.initialize("UA-154969560-1");
@@ -80,6 +81,12 @@ export default class HomePage extends React.Component {
             <button className="btn letsGo" onClick={this.onNewGround}>
               Let's go
             </button>
+          </div>
+          <div>
+            <p className="sponsor">Sponsored By</p>
+            <a href="https://bit.ly/3gPILy7" target="_blank">
+              <img className="Judge0" src={Judge0} alt="Judge0" />
+            </a>
           </div>
         </div>
       </React.Fragment>

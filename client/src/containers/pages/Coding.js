@@ -225,6 +225,18 @@ export default class CodingPage extends React.Component {
               )}
             </div>
           </div>
+          <div>
+            <a
+              className="sponsor2"
+              href="https://bit.ly/3gPILy7"
+              target="_blank"
+            >
+              <span>
+                Sponsored by <b>Judge0</b> | The world's most advanced
+                open-source online code execution system.
+              </span>
+            </a>
+          </div>
         </React.Fragment>
       </RemoveScroll>
     );

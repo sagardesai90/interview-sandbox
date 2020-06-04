@@ -5,12 +5,20 @@
 
 .lowerMenu {
   padding: 0px;
-  height: calc(20vh);
+  height: calc(21vh);
 }
 
 .witeboard {
   height: 100%;
   width: 100%;
+}
+
+.sponsor2 {
+  display: flex;
+  justify-content: center;
+  height: calc(3vh);
+  text-decoration: none;
+  color: white;
 }
 
 .coding-page {
