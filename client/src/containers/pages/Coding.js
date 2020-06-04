@@ -232,7 +232,7 @@ export default class CodingPage extends React.Component {
               target="_blank"
             >
               <span>
-                Sponsored by <b>Judge0</b> | The world's most advanced
+                Sponsored by <b>Judge0</b> - The world's most advanced
                 open-source online code execution system.
               </span>
             </a>
