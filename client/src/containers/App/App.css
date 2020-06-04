@@ -58,6 +58,7 @@ p {
   font-weight: 100;
   margin-bottom: 12px;
 }
+
 .sub-title {
   font-size: 16px;
   font-weight: 700;
@@ -77,4 +78,33 @@ p {
 
 .cursive {
   font-family: "Vibur", cursive;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .App-title {
+    color: #f1a585;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 36px;
+    text-decoration: none;
+  }
+
+  .extras {
+    font-size: 13px;
+  }
+
+  .title {
+    font-size: 24px;
+    font-weight: 67;
+    margin-bottom: 12px;
+  }
+
+  .sub-title {
+    font-size: 11px;
+    font-weight: 470;
+    color: rgb(124, 124, 124);
+    margin-bottom: 36px;
+    max-width: 500px;
+  }
 }

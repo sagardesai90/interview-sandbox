@@ -35,6 +35,24 @@
   bottom: 20px;
 }
 
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .sponsor {
+    position: absolute;
+    left: 30px;
+    bottom: 75px;
+    font-size: small;
+  }
+
+  .Judge0 {
+    width: 100px;
+    margin-top: 0.5rem;
+    position: absolute;
+    left: 30px;
+    bottom: 20px;
+  }
+}
+
 @keyframes text-flicker {
   2% {
     color: rgb(230, 0, 120);
