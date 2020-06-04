@@ -230,6 +230,7 @@ export default class CodingPage extends React.Component {
               className="sponsor2"
               href="https://bit.ly/3gPILy7"
               target="_blank"
+              rel="noopener noreferrer"
             >
               <span>
                 Sponsored by <b>Judge0</b> - The world's most advanced
