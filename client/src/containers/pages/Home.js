@@ -83,7 +83,7 @@ export default class HomePage extends React.Component {
             </button>
           </div>
           <div>
-            <p className="sponsor">Sponsored By</p>
+            <p className="sponsor">Sponsored by</p>
             <a href="https://bit.ly/3gPILy7" target="_blank">
               <img className="Judge0" src={Judge0} alt="Judge0" />
             </a>
