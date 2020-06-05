@@ -21,6 +21,19 @@
   color: white;
 }
 
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 800px) {
+  .sponsor2 {
+    font-size: small;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .sponsor2 {
+    font-size: x-small;
+  }
+}
+
 .coding-page {
 }
 

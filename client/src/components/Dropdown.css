@@ -9,6 +9,18 @@
   clip-path: polygon(92% 0, 100% 25%, 100% 100%, 8% 100%, 0% 75%, 0 0);
 }
 
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .dd-wrapper {
+    max-width: 3rem;
+  }
+
+  .dd-header-title {
+    padding: 0.3rem;
+    font-size: xx-small;
+  }
+}
+
 .dd-header-title {
   padding: 0.3rem;
   font-size: small;
