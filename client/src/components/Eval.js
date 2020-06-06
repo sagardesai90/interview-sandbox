@@ -144,7 +144,7 @@ class Eval extends React.Component {
     };
 
     return (
-      <div>
+      <div className="eval">
         <button className="evalBtn" onClick={this.runCode.bind(this)}>
           <IconContext.Provider
             value={{ size: "0.8em", style: { paddingRight: "0.2rem" } }}
