@@ -9,6 +9,11 @@
   animation: border-flicker 2s linear forwards;
 }
 
+.repo {
+  color: #fff;
+  text-decoration: none;
+}
+
 .letsGo {
   color: rgb(241, 165, 133);
   background-color: Transparent;
@@ -23,7 +28,7 @@
 
 .sponsor {
   position: absolute;
-  left: 30px;
+  left: 64px;
   bottom: 75px;
 }
 
@@ -31,7 +36,7 @@
   width: 150px;
   margin-top: 0.5rem;
   position: absolute;
-  left: 30px;
+  left: 64px;
   bottom: 20px;
 }
 
