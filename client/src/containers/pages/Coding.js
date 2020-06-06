@@ -173,7 +173,7 @@ export default class CodingPage extends React.Component {
             <div className="coding-page">
               {/* This is where the DROPDOWN menu goes */}
               <Dropdown
-                title="Select Language "
+                title="Language "
                 list={this.state.language}
                 toggleItem={this.toggleLanguage}
                 className="dropdown"

@@ -80,18 +80,27 @@ p {
   font-family: "Vibur", cursive;
 }
 
-/* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
+/* Extra small devices (phones, 818px and down) */
+@media only screen and (max-width: 818px) {
   .App-title {
-    color: #f1a585;
-    font-size: 13px;
-    font-weight: 700;
-    line-height: 36px;
-    text-decoration: none;
+    font-size: 10px;
+    line-height: 24px;
   }
 
   .extras {
-    font-size: 13px;
+    font-size: 10px;
+  }
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .App-title {
+    font-size: 10px;
+    line-height: 24px;
+  }
+
+  .extras {
+    font-size: 10px;
   }
 
   .title {
@@ -106,5 +115,27 @@ p {
     color: rgb(124, 124, 124);
     margin-bottom: 36px;
     max-width: 500px;
+  }
+}
+
+/* Extra small devices (phones, 548px and down) */
+@media only screen and (max-width: 548px) {
+  .App-title {
+    font-size: 8px;
+    line-height: 18px;
+  }
+  .extras {
+    font-size: 8px;
+  }
+}
+
+/* Extra small devices (phones, 463px and down) */
+@media only screen and (max-width: 463px) {
+  .App-title {
+    font-size: 6.5px;
+    line-height: 16px;
+  }
+  .extras {
+    font-size: 6.5px;
   }
 }
