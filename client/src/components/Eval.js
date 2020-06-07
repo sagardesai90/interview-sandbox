@@ -4,6 +4,7 @@ import { database } from "firebase";
 import { IconContext } from "react-icons";
 import { FaRegPlayCircle } from "react-icons/fa";
 import "./Eval.css";
+import "../fonts/Modenine-2OPd.ttf";
 
 class Eval extends React.Component {
   constructor(props) {
