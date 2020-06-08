@@ -7,6 +7,7 @@ import {
   FaPython,
   FaGem,
   FaSwift,
+  FaJava,
 } from "react-icons/fa";
 import "font-awesome/css/font-awesome.min.css";
 import "./Dropdown.css";
@@ -62,6 +63,7 @@ class Dropdown extends React.Component {
                 {item.fa_icon === "FaPython" && <FaPython />}
                 {item.fa_icon === "FaGem" && <FaGem />}
                 {item.fa_icon === "FaSwift" && <FaSwift />}
+                {item.fa_icon === "FaJava" && <FaJava />}
                 {item.title}
               </li>
             ))}
@@ -86,6 +88,11 @@ class Dropdown extends React.Component {
           {this.props.currLang === " Swift" && (
             <IconContext.Provider value={{ size: "0.5rem" }}>
               <FaSwift />{" "}
+            </IconContext.Provider>
+          )}
+          {this.props.currLang === " Java" && (
+            <IconContext.Provider value={{ size: "0.5rem" }}>
+              <FaJava />{" "}
             </IconContext.Provider>
           )}
           {this.props.currLang}

@@ -15,6 +15,7 @@ require("codemirror/mode/javascript/javascript");
 require("codemirror/mode/ruby/ruby");
 require("codemirror/mode/python/python");
 require("codemirror/mode/swift/swift");
+require("codemirror/mode/clike/clike");
 require("codemirror/addon/display/placeholder");
 require("codemirror/addon/edit/matchbrackets");
 require("codemirror/addon/edit/matchtags");
@@ -68,6 +69,15 @@ export default class CodingPage extends React.Component {
           title: " Swift",
           mode: "swift",
           fa_icon: "FaSwift",
+          selected: false,
+          key: "language",
+        },
+        {
+          id: 4,
+          language_id: 62,
+          title: " Java",
+          mode: "text/x-java",
+          fa_icon: "FaJava",
           selected: false,
           key: "language",
         },

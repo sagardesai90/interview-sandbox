@@ -103,6 +103,12 @@ class Eval extends React.Component {
         return response.json();
       })
       .then((data) => {
+        console.log(data.status.id, "data.status");
+        while (data.status.id < 3) {
+          setTimeout(() => {
+            this.useToken();
+          }, 1500);
+        }
         if (data.stdout) {
           let evalOutput = data.stdout;
           this.setState({ evalOutput: evalOutput, loading: false });
