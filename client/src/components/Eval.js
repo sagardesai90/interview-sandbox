@@ -104,7 +104,7 @@ class Eval extends React.Component {
       })
       .then((data) => {
         console.log(data.status.id, "data.status");
-        while (data.status.id < 3) {
+        if (data.status.id < 3) {
           setTimeout(() => {
             this.useToken();
           }, 1500);
