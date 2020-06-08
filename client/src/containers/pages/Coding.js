@@ -16,6 +16,9 @@ require("codemirror/mode/ruby/ruby");
 require("codemirror/mode/python/python");
 require("codemirror/mode/swift/swift");
 require("codemirror/mode/clike/clike");
+require("codemirror/mode/go/go");
+require("codemirror/mode/php/php");
+require("codemirror/mode/r/r");
 require("codemirror/addon/display/placeholder");
 require("codemirror/addon/edit/matchbrackets");
 require("codemirror/addon/edit/matchtags");
@@ -78,6 +81,42 @@ export default class CodingPage extends React.Component {
           title: " Java",
           mode: "text/x-java",
           fa_icon: "FaJava",
+          selected: false,
+          key: "language",
+        },
+        {
+          id: 5,
+          language_id: 60,
+          title: " Go",
+          mode: "text/x-go",
+          fa_icon: "FaGoogle",
+          selected: false,
+          key: "language",
+        },
+        {
+          id: 6,
+          language_id: 78,
+          title: " Kotlin",
+          mode: "text/x-kotlin",
+          fa_icon: "FaAndroid",
+          selected: false,
+          key: "language",
+        },
+        {
+          id: 7,
+          language_id: 68,
+          title: " PHP",
+          mode: "application/x-httpd-php",
+          fa_icon: "FaPhp",
+          selected: false,
+          key: "language",
+        },
+        {
+          id: 8,
+          language_id: 80,
+          title: " R",
+          mode: "text/x-rsrc",
+          fa_icon: "FaRProject",
           selected: false,
           key: "language",
         },

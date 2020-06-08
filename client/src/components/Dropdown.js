@@ -8,6 +8,10 @@ import {
   FaGem,
   FaSwift,
   FaJava,
+  FaGoogle,
+  FaAndroid,
+  FaPhp,
+  FaRProject,
 } from "react-icons/fa";
 import "font-awesome/css/font-awesome.min.css";
 import "./Dropdown.css";
@@ -64,6 +68,10 @@ class Dropdown extends React.Component {
                 {item.fa_icon === "FaGem" && <FaGem />}
                 {item.fa_icon === "FaSwift" && <FaSwift />}
                 {item.fa_icon === "FaJava" && <FaJava />}
+                {item.fa_icon === "FaGoogle" && <FaGoogle />}
+                {item.fa_icon === "FaAndroid" && <FaAndroid />}
+                {item.fa_icon === "FaPhp" && <FaPhp />}
+                {item.fa_icon === "FaRProject" && <FaRProject />}
                 {item.title}
               </li>
             ))}
@@ -93,6 +101,26 @@ class Dropdown extends React.Component {
           {this.props.currLang === " Java" && (
             <IconContext.Provider value={{ size: "0.5rem" }}>
               <FaJava />{" "}
+            </IconContext.Provider>
+          )}
+          {this.props.currLang === " Go" && (
+            <IconContext.Provider value={{ size: "0.5rem" }}>
+              <FaGoogle />{" "}
+            </IconContext.Provider>
+          )}
+          {this.props.currLang === " Kotlin" && (
+            <IconContext.Provider value={{ size: "0.5rem" }}>
+              <FaAndroid />{" "}
+            </IconContext.Provider>
+          )}
+          {this.props.currLang === " PHP" && (
+            <IconContext.Provider value={{ size: "0.5rem" }}>
+              <FaPhp />{" "}
+            </IconContext.Provider>
+          )}
+          {this.props.currLang === " R" && (
+            <IconContext.Provider value={{ size: "0.5rem" }}>
+              <FaRProject />{" "}
             </IconContext.Provider>
           )}
           {this.props.currLang}
