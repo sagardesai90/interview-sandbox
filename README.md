@@ -12,7 +12,7 @@ An application that was inspired by the fact that interviews are meant to intera
 
 - Code editor with real time sync
 
-  - Javascript, Python, Ruby, Swift, Java
+  - Javascript, Python, Ruby, Swift, Java, Go, Kotlin, PHP, R
 
 - Whiteboard with real time sync
 - Code evaluation
