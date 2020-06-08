@@ -8,6 +8,18 @@ Live app: http://interviewsandbox.com
 
 An application that was inspired by the fact that interviews are meant to interactive, not only in the face to face and speaking sense, but also in that they're meant to provide you a chance to show your thinking process. I sought out to build an application that lets interviewers outline their code, as well as leverage a whiteboard to show their solutions to the problem at hand.
 
+## Features
+
+- Code editor with real time sync
+
+  - Javascript, Python, Ruby, Swift, Java
+
+- Whiteboard with real time sync
+- Code evaluation
+- Video chat
+- No login needed
+- Free to use
+
 ## Stack
 
 React, Firebase (realtime database), CodeMirror for the text editor, WebRTC & sockets for video chat, and Witeboard integration. There are a couple bugs and some features still being built.

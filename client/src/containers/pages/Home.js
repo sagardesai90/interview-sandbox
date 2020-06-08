@@ -31,7 +31,7 @@ export default class HomePage extends React.Component {
       .ref("code-sessions/" + this.state.key)
       .set({
         content:
-          '# Welcome to your Interview Sandbox! \n\n# 1 - Just share this link with another person \n# \t  to get them on the same page.\n# 2 - Once they join, you\'ll see the call button.\n# 3 - The code, code output, and drawings are synced\n#     in real time between users.\n# 4 - Select between Javascript, Python, Ruby, and Swift.\n\n# Try running the code below to see the ouput!\n\nprint("happy coding")',
+          '# Welcome to your Interview Sandbox! \n\n# 1 - Just share this link with another person \n# \t  to get them on the same page.\n# 2 - Once they join, you\'ll see the call button.\n# 3 - The code, code output, and drawings are synced\n#     in real time between users.\n# 4 - Select between Javascript, Python, Ruby, Swift, and Java.\n\n# Try running the code below to see the ouput!\n\nprint("happy coding")',
         createdon: Date(),
       });
     this.props.history.push("/" + this.state.key);
