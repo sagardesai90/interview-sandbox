@@ -1,5 +1,6 @@
 import React from "react";
 import Spinner from "./Spinner.js";
+import DropdownTheme from "./DropdownTheme";
 import { database } from "firebase";
 import { IconContext } from "react-icons";
 import { FaRegPlayCircle } from "react-icons/fa";
@@ -16,9 +17,47 @@ class Eval extends React.Component {
       evalOutput: null,
       loading: false,
       sessionid: this.props.sessionid,
+      mode: "terminal",
+      theme: [
+        {
+          id: 0,
+          mode: "plain",
+          key: "theme",
+          title: "Plain",
+          selected: false,
+        },
+        {
+          id: 1,
+          mode: "terminal",
+          key: "theme",
+          title: "Terminal",
+          selected: false,
+        },
+        // {
+        //   id: 2,
+        //   mode: "nintendoid",
+        //   key: "theme",
+        //   title: "Nintendoid",
+        //   selected: false,
+        // },
+      ],
+      currTheme: "Terminal",
     };
     this.runCode = this.runCode.bind(this);
     this.useToken = this.useToken.bind(this);
+    this.toggleTheme = this.toggleTheme.bind(this);
+  }
+
+  //Lets you select between JS, Python, Ruby
+  toggleTheme(id, key, mode) {
+    let temp = this.state[key];
+    temp[id].selected = !temp[id].selected;
+    let newMode = this.state[key][id];
+    this.setState({
+      [key]: temp,
+      mode: newMode["mode"],
+      currTheme: newMode["title"],
+    });
   }
 
   //As the user enters code into the editor, our Eval component receives relevant info
@@ -146,12 +185,25 @@ class Eval extends React.Component {
       } else if (!loading && !evalOutput) {
         return <p className="codeRes">Terminal output here.</p>;
       } else if (evalOutput) {
-        return <p className="codeRes">{evalOutput}</p>;
+        return (
+          <p
+            className={
+              this.state.currTheme == "Terminal" ? "codeRes" : "codeRes-plain"
+            }
+          >
+            {evalOutput}
+          </p>
+        );
       }
     };
 
     return (
       <div className="eval">
+        <DropdownTheme
+          toggleItem={this.toggleTheme}
+          title="Theme "
+          theme={this.state.theme}
+        />
         <button className="evalBtn" onClick={this.runCode.bind(this)}>
           <IconContext.Provider
             value={{ size: "0.8em", style: { paddingRight: "0.2rem" } }}
@@ -160,6 +212,7 @@ class Eval extends React.Component {
           </IconContext.Provider>
           Run Code
         </button>
+
         {conditionalRender()}
       </div>
     );
