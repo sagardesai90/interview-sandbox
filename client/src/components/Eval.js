@@ -199,21 +199,22 @@ class Eval extends React.Component {
 
     return (
       <div className="eval">
-        <DropdownTheme
-          toggleItem={this.toggleTheme}
-          title="Theme "
-          theme={this.state.theme}
-        />
-        <button className="evalBtn" onClick={this.runCode.bind(this)}>
-          <IconContext.Provider
-            value={{ size: "0.8em", style: { paddingRight: "0.2rem" } }}
-          >
-            <FaRegPlayCircle />
-          </IconContext.Provider>
-          Run Code
-        </button>
-
         {conditionalRender()}
+        <div>
+          <button className="evalBtn" onClick={this.runCode.bind(this)}>
+            <IconContext.Provider
+              value={{ size: "0.8em", style: { paddingRight: "0.2rem" } }}
+            >
+              <FaRegPlayCircle />
+            </IconContext.Provider>
+            Run Code
+          </button>
+          <DropdownTheme
+            toggleItem={this.toggleTheme}
+            title="Theme "
+            theme={this.state.theme}
+          />
+        </div>
       </div>
     );
   }

@@ -6,6 +6,7 @@
   z-index: 99;
   background-color: #fcee09;
   color: black;
+  margin-right: 0.25rem;
   clip-path: polygon(92% 0, 100% 25%, 100% 100%, 8% 100%, 0% 75%, 0 0);
 }
 

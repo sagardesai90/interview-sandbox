@@ -6,6 +6,8 @@
   outline: none;
   margin-top: 0.25rem;
   margin-left: 0.25rem;
+  margin-right: 0.25rem;
+  margin-bottom: 0.25rem;
   float: right;
 }
 
@@ -19,6 +21,8 @@
 
 .eval {
   border-top: 2.2px solid #838486;
+  display: grid;
+  grid-template-columns: 6fr 1fr;
 }
 
 /* @font-face {
