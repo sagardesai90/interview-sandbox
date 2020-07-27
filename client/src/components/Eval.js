@@ -188,7 +188,7 @@ class Eval extends React.Component {
         return (
           <p
             className={
-              this.state.currTheme == "Terminal" ? "codeRes" : "codeRes-plain"
+              this.state.currTheme === "Terminal" ? "codeRes" : "codeRes-plain"
             }
           >
             {evalOutput}
