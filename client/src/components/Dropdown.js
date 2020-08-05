@@ -12,6 +12,7 @@ import {
   FaAndroid,
   FaPhp,
   FaRProject,
+  FaBars,
 } from "react-icons/fa";
 import "font-awesome/css/font-awesome.min.css";
 import "./Dropdown.css";
@@ -72,6 +73,7 @@ class Dropdown extends React.Component {
                 {item.fa_icon === "FaAndroid" && <FaAndroid />}
                 {item.fa_icon === "FaPhp" && <FaPhp />}
                 {item.fa_icon === "FaRProject" && <FaRProject />}
+                {item.fa_icon === "FaBars" && <FaBars />}
                 {item.title}
               </li>
             ))}
@@ -121,6 +123,11 @@ class Dropdown extends React.Component {
           {this.props.currLang === " R" && (
             <IconContext.Provider value={{ size: "0.5rem" }}>
               <FaRProject />{" "}
+            </IconContext.Provider>
+          )}
+          {this.props.currLang === " Scala" && (
+            <IconContext.Provider value={{ size: "0.5rem" }}>
+              <FaBars />{" "}
             </IconContext.Provider>
           )}
           {this.props.currLang}

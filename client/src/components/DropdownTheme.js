@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { FaAngleDown, FaAngleUp } from "react-icons/fa";
 import "font-awesome/css/font-awesome.min.css";
+import "./DropdownTheme.css";
+
 export default class DropdownTheme extends Component {
   constructor(props) {
     super(props);

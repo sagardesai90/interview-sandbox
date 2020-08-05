@@ -186,13 +186,17 @@ class Eval extends React.Component {
         return <p className="codeRes">Terminal output here.</p>;
       } else if (evalOutput) {
         return (
-          <p
-            className={
-              this.state.currTheme === "Terminal" ? "codeRes" : "codeRes-plain"
-            }
-          >
-            {evalOutput}
-          </p>
+          <div>
+            <p
+              className={
+                this.state.currTheme === "Terminal"
+                  ? "codeRes"
+                  : "codeRes-plain"
+              }
+            >
+              {evalOutput}
+            </p>
+          </div>
         );
       }
     };
@@ -200,14 +204,14 @@ class Eval extends React.Component {
     return (
       <div className="eval">
         {conditionalRender()}
-        <div>
+        <div className="buttonsDiv">
           <button className="evalBtn" onClick={this.runCode.bind(this)}>
             <IconContext.Provider
               value={{ size: "0.8em", style: { paddingRight: "0.2rem" } }}
             >
               <FaRegPlayCircle />
             </IconContext.Provider>
-            Run Code
+            Run
           </button>
           <DropdownTheme
             toggleItem={this.toggleTheme}

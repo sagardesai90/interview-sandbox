@@ -120,6 +120,15 @@ export default class CodingPage extends React.Component {
           selected: false,
           key: "language",
         },
+        {
+          id: 9,
+          language_id: 81,
+          title: " Scala",
+          mode: "text/x-scala",
+          fa_icon: "FaBars",
+          selected: false,
+          key: "language",
+        },
       ],
       currlang: " Python",
       cursorPosition: {
