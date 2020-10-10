@@ -1,0 +1,61 @@
+.outer-div {
+  display: table;
+  box-sizing: border-box;
+  margin: 4px;
+  padding: 1px;
+}
+
+.t {
+  display: table-cell;
+  width: 100%;
+}
+
+.t > input {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: Modenine-2OPd;
+  src: local("Modenine-2OPd"),
+    url(../fonts/Modenine-2OPd.ttf) format("truetype");
+}
+
+.time {
+  padding: 1em;
+  color: #66ff66;
+  font-family: Modenine-2OPd;
+  text-shadow: 0.06rem 0 0.06rem #ea36af, -0.125rem 0 0.06rem #75fa69;
+  letter-spacing: 0.125em;
+  animation-duration: 0.01s;
+  animation-name: textflicker;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  font-size: 10px;
+  margin-top: 2rem;
+}
+
+.time-plain {
+  padding: 1em;
+  color: #fff;
+  font-family: Modenine-2OPd;
+  letter-spacing: 0.125em;
+  font-size: 10px;
+}
+
+.timer-btn {
+  background-color: #fcee09;
+  color: black;
+  clip-path: polygon(92% 0, 100% 25%, 100% 100%, 8% 100%, 0% 75%, 0 0);
+  border: 0;
+  outline: none;
+  float: right;
+}
+
+.timer-btn:hover {
+  opacity: 0.7;
+}
+
+.timer-btn:target {
+  opacity: 0.3;
+}

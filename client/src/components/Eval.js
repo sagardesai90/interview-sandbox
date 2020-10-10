@@ -4,6 +4,7 @@ import DropdownTheme from "./DropdownTheme";
 import { database } from "firebase";
 import { IconContext } from "react-icons";
 import { FaRegPlayCircle } from "react-icons/fa";
+import Timer from "./Timer";
 import "./Eval.css";
 import "../fonts/Modenine-2OPd.ttf";
 
@@ -218,6 +219,7 @@ class Eval extends React.Component {
             title="Theme "
             theme={this.state.theme}
           />
+          <Timer theme={this.state.currTheme} />
         </div>
       </div>
     );

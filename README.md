@@ -40,6 +40,16 @@ I deployed it to Firebase, but you can deploy elsewhere as well.
 
 If you have any issues/bugs, please create an issue on GH!
 
+## Future Additions
+
+- I have received some feedback asking for a interiewer/interviewee matching capability, for practice purposes, so this will be in the works shortly!
+
+- Cleaning up the Eval section, it is a bit clunky right now.
+
+- Having a set of problems to practice on, this is fairly simple so I might have this complete in a couple weeks.
+
+- Account creation so that users can keep track of their past sandboxes.
+
 Cheers,
 
 Sagar
