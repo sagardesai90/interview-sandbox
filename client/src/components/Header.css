@@ -1,0 +1,11 @@
+.mainLogo {
+  -webkit-filter: drop-shadow(0.5px 0.5px 0 white)
+    drop-shadow(-0.5px 0.5px 0 white) drop-shadow(0.5px -0.5px 0 white)
+    drop-shadow(-0.5px -0.5px 0 white);
+
+  filter: drop-shadow(0.5px 0.5px 0 white) drop-shadow(-0.5px 0.5px 0 white)
+    drop-shadow(0.5px -0.5px 0 white) drop-shadow(-0.5px -0.5px 0 white);
+
+  width: 1.1rem;
+  margin-right: 0.5rem;
+}
