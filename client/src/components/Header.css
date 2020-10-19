@@ -9,3 +9,12 @@
   width: 1.1rem;
   margin-right: 0.5rem;
 }
+
+.extras {
+  margin-right: 0.3rem;
+  font-size: x-small;
+}
+
+.PH {
+  position: relative;
+}
