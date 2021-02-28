@@ -89,11 +89,11 @@ class Eval extends React.Component {
   async runCode() {
     this.setState({ loading: true });
     const initialToken = await fetch(
-      "https://judge0.p.rapidapi.com/submissions",
+      "https://judge0-ce.p.rapidapi.com/submissions",
       {
         method: "POST",
         headers: {
-          "x-rapidapi-host": "judge0.p.rapidapi.com",
+          "x-rapidapi-host": "judge0-ce.p.rapidapi.com",
           "x-rapidapi-key":
             "fd1e306d91msh9ad92d420409e41p14b863jsne1e71e9d9ea2",
           "content-type": "application/json",
@@ -129,11 +129,11 @@ class Eval extends React.Component {
 
   async useToken() {
     const getSubmission = await fetch(
-      `https://judge0.p.rapidapi.com/submissions/${this.state.token}`,
+      `https://judge0-ce.p.rapidapi.com/submissions/${this.state.token}`,
       {
         method: "GET",
         headers: {
-          "x-rapidapi-host": "judge0.p.rapidapi.com",
+          "x-rapidapi-host": "judge0-ce.p.rapidapi.com",
           "x-rapidapi-key":
             "fd1e306d91msh9ad92d420409e41p14b863jsne1e71e9d9ea2",
         },
