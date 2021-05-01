@@ -40,6 +40,12 @@ I deployed it to Firebase, but you can deploy elsewhere as well.
 
 If you have any issues/bugs, please create an issue on GH!
 
+## Update Backend and Frontend
+
+### In root directory `git push heroku master` to push any changes made to the backend (server.js).
+
+### In client folder `firebase deploy` to push the changes made to the frontend.
+
 ## Future Additions
 
 - I have received some feedback asking for a interiewer/interviewee matching capability, for practice purposes, so this will be in the works shortly!
