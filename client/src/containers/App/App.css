@@ -17,7 +17,7 @@
   margin-left: auto;
 }
 .App-title {
-  color: #f1a585;
+  color: #fcee09;
   font-size: 18px;
   font-weight: 700;
   line-height: 36px;
@@ -67,13 +67,13 @@ p {
   max-width: 500px;
 }
 .highlight {
-  color: #f1a585;
+  color: #fcee09;
 }
 
 .neon {
   color: #fff;
-  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #fff, 0 0 40px #f1a585,
-    0 0 80px #f1a585, 0 0 90px #f1a585, 0 0 100px #f1a585, 0 0 120px #f1a585;
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #fff, 0 0 40px #fcee09,
+    0 0 80px #fcee09, 0 0 90px #fcee09, 0 0 100px #fcee09, 0 0 120px #fcee09;
 }
 
 .cursive {

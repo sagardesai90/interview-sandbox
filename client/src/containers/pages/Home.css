@@ -1,6 +1,6 @@
 .buttonDiv {
   border-radius: 8px;
-  border: 3px solid rgb(241, 165, 133);
+  border: 3px solid #fcee09;
   cursor: pointer;
   width: 100px;
 }
@@ -15,7 +15,7 @@
 }
 
 .letsGo {
-  color: rgb(241, 165, 133);
+  color: #fcee09;
   background-color: Transparent;
   border: none;
   padding: 0.5rem;
